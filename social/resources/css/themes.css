@@ -1,0 +1,500 @@
+/*   /////////////////    DEFAULT   /////////////////////    */
+
+.bg_default{
+    background-color: rgba(232, 231, 231, 0.949);
+}
+
+
+.nav_default{
+    background-color: white;
+}
+
+.home_default{
+    color:  #0d6efd;
+}
+
+.home_default:hover{
+    color:  #0d6efd;
+}
+
+.titles_default{
+    background-color: #0d6efd;
+}
+
+.titles_default:hover{
+    background-color: rgba(34, 116, 239, 0.974);
+}
+
+.search_default{
+    background-color: rgba(232, 231, 231, 0.949);
+    border: 1px solid rgb(200, 193, 193);
+}
+
+.li_default a{
+    color: black;
+}
+
+.li_default a i{
+    color: black;
+}
+
+.notification_default{
+    color:white;
+}
+
+.logout_default{
+    color:  #0d6efd !important;
+}
+
+.destroy_default{
+    color: red !important;
+}
+
+.default{
+    background-color: rgb(253, 244, 244);
+    box-shadow: 1px 2px 8px rgb(160, 153, 153);
+}
+
+.comment_default{
+    background-color:  rgba(232, 231, 231, 0.949);
+}
+
+.edit_default{
+    background-color: #0d6efd;
+    color: white;
+}
+
+.form_default button{
+    background-color: #0d6efd;
+    color: white;
+}
+
+.form_default button:hover{
+    background-color: #0d6efd;
+    color: white;
+}
+
+
+/*   /////////////////    SCURO   /////////////////////    */
+
+.bg_opaque{
+    background-color: rgba(245, 239, 239, 0.949);
+}
+
+
+.nav_opaque{
+    background-color: rgba(237, 225, 225, 0.949);
+}
+
+.home_opaque{
+    color:  #0d6efd;
+}
+
+.home_opaque:hover{
+    color:  #0d6efd;
+}
+
+.titles_opaque{
+    background-color: #0d6efd;
+}
+
+.titles_opaque:hover{
+    background-color: rgba(34, 116, 239, 0.974);
+}
+
+.search_opaque{
+    background-color: rgba(210, 197, 197, 0.949);
+    border: 1px solid rgb(200, 193, 193);
+}
+
+.li_opaque a{
+    color: black;
+}
+
+.li_opaque a i{
+    color: black;
+}
+
+.notification_opaque{
+    color:white;
+}
+
+.logout_opaque{
+    color:  #0d6efd !important;
+}
+
+.destroy_opaque{
+    color: red !important;
+}
+
+.opaque{
+    background-color: rgb(223, 211, 211);
+    box-shadow: 1px 2px 8px rgb(160, 153, 153);
+}
+
+.comment_opaque{
+    background-color:  rgba(232, 231, 231, 0.949);
+}
+
+.edit_opaque{
+    background-color: #0d6efd;
+    color: white;
+}
+
+.form_opaque button{
+    background-color: #0d6efd;
+}
+
+.form_opaque button:hover{
+    background-color: #0d6efd;
+}
+
+
+
+/*  ///////////////////     VERDE   ///////////////////    */
+
+.bg_green{
+    background-color: rgba(151, 151, 170, 0.875);
+}
+
+
+.nav_green{
+    background-color:rgb(179, 185, 168);
+}
+
+.home_green{
+    color:  rgb(209, 62, 62);
+}
+
+.home_green:hover{
+    color:  rgb(209, 62, 62);
+}
+
+.titles_green{
+    background-color:  rgb(209, 62, 62);
+}
+
+.titles_green:hover{
+    background-color: rgb(200, 49, 49);
+} 
+
+.search_green{
+    background-color: rgba(151, 151, 170, 0.875);
+    box-shadow: 1px 2px 8px rgb(67, 63, 63); 
+}
+
+.li_green a{
+    color: black;
+}
+
+.li_green a i{
+    color: black;
+}
+
+.notification_green{
+    color:white;
+}
+
+.logout_green{
+    color:  #0d6efd !important;
+}
+
+.destroy_green{
+    color: red !important;
+}
+
+.green{
+    background-color:rgb(179, 185, 168);
+    box-shadow: 1px 2px 8px rgb(67, 63, 63); 
+}
+
+.comment_green{
+    background-color: rgba(151, 151, 170, 0.875);
+}
+
+.edit_green{
+    background-color: rgb(209, 62, 62);
+    color: white;
+}
+
+.form_green input[type = 'text'],
+.form_green input[type = 'email'],
+.form_green input[type = 'password'],
+.form_green input[type = 'file'],
+.form_green select,
+.form_green textarea{
+    background-color: rgba(151, 151, 170, 0.875);
+    border: transparent;
+}
+
+.form_green textarea:focus{
+    background-color: rgba(151, 151, 170, 0.875);
+}
+
+.form_green button{
+    background-color: rgb(209, 62, 62);
+}
+
+.form_green button:hover{
+    background-color: rgb(200, 49, 49);
+}
+
+
+
+/*  /////////////////     ROSSO  /////////////////////////    */
+
+.bg_red{
+    background-color: rgba(186, 186, 218, 0.875);
+}
+
+
+.nav_red{
+    background-color: rgb(218, 145, 145);
+}
+
+.home_red{
+    color:  rgb(49, 44, 44);
+}
+
+.home_red:hover{
+    color:  rgb(84, 78, 78);
+}
+
+.titles_red{
+    background-color:  rgb(62, 62, 198);
+    color:  rgb(49, 44, 44);
+}
+
+.titles_red:hover{
+    background-color:  rgb(72, 72, 215);
+    color:  rgb(49, 44, 44);
+}
+
+.search_red{
+    background-color: rgba(186, 186, 218, 0.875);
+    box-shadow: 1px 2px 8px rgb(67, 63, 63); 
+}
+
+.li_red a{
+    color: black;
+}
+
+.li_red a i{
+    color: black;
+}
+
+.notification_red{
+    color:white;
+}
+
+.logout_red{
+    color:  #0d6efd !important;
+}
+
+.destroy_red{
+    color: red !important;
+}
+
+.red{
+    background-color: rgb(218, 145, 145);
+    box-shadow: 1px 2px 8px rgba(66, 55, 55, 0.814);
+}
+
+.comment_red{
+    background-color: rgba(186, 186, 218, 0.875);
+}
+
+.edit_red{
+    background-color:  rgb(62, 62, 198);
+    color:  rgb(49, 44, 44);
+}
+
+.form_red input[type = 'text'],
+.form_red input[type = 'email'],
+.form_red input[type = 'password'],
+.form_red input[type = 'file'],
+.form_red select,
+.form_red textarea{
+    background-color: rgba(186, 186, 218, 0.875);
+    border: transparent;
+}
+
+.form_red textarea:focus{
+    background-color: rgba(186, 186, 218, 0.875);
+}
+
+.form_red button{
+    background-color:  rgb(62, 62, 198);
+}
+
+.form_red button:hover{
+    background-color:  rgb(62, 62, 198);
+}
+
+
+
+/*  /////////////////     NERO  /////////////////////////    */
+
+.bg_black{
+    background-color: rgba(232, 231, 231, 0.949);
+}
+
+.nav_black{
+    background-color:   rgb(49, 44, 44);
+    color: rgb(223, 212, 212);
+}
+
+.home_black{
+    color:  white;
+}
+
+.home_black:hover{
+    color:  white;
+}
+
+.titles_black{
+    background-color: #0d6efd;
+}
+
+.titles_black:hover{
+    background-color: rgba(34, 116, 239, 0.974);
+}
+
+.search_black{
+    background-color:rgb(223, 212, 212);
+    box-shadow: 1px 2px 8px white; 
+}
+
+.li_black:hover{
+    color: white;
+}
+
+.li_black a{
+    color: white;
+}
+
+.div_black a{
+    color: black;
+}
+
+.li_black a i{
+    color: rgb(223, 212, 212);
+}
+
+.notification_black{
+    color:black !important;
+}
+
+.logout_black{
+    color:  #0d6efd !important;
+}
+
+.destroy_black{
+    color: red !important;
+}
+
+.black{
+    background-color: rgb(253, 244, 244);
+    box-shadow: 1px 2px 8px rgb(160, 153, 153);
+}
+
+.comment_black{
+    background-color:  rgba(232, 231, 231, 0.949);
+}
+
+.edit_black{
+    background-color: #0d6efd;
+    color: white;
+}
+
+.form_black button{
+    background-color: #0d6efd;
+    color: white;
+}
+
+.form_black button:hover{
+    background-color: #0d6efd;
+    color: white;
+}
+
+
+
+/*   /////////////////    AZZURRO   /////////////////////    */
+
+.bg_blue{
+    background-color: rgba(229, 218, 228, 0.949);
+}
+
+
+.nav_blue{
+    background-color: rgb(144, 171, 222);
+}
+
+.home_blue{
+    color:  rgb(35, 32, 32);
+}
+
+.home_blue:hover{
+    color:  rgb(35, 32, 32);
+}
+
+.titles_blue{
+   background-color:  rgb(144, 171, 222);
+}
+
+.titles_blue:hover{
+    background-color: rgba(101, 144, 209, 0.974);
+}
+
+.search_blue{
+    background-color: rgba(225, 215, 215, 0.949);
+    border: 1px solid rgb(200, 193, 193);
+}
+
+.li_blue a{
+    color: black;
+}
+
+.li_blue a i{
+    color: black;
+}
+
+.notification_blue{
+    color:white;
+}
+
+.logout_blue{
+    color:  #0d6efd !important;
+}
+
+.destroy_blue{
+    color: red !important;
+}
+
+.blue{
+    background-color: rgb(144, 171, 222);
+    box-shadow: 1px 2px 8px rgb(37, 43, 45);
+}
+
+.comment_blue{
+    background-color:  rgba(232, 231, 231, 0.949);
+}
+
+.edit_blue{
+    background-color: #0d6efd;
+    color: white;
+}
+
+.form_blue button{
+    background-color: #0d6efd;
+}
+
+.form_blue button:hover{
+    background-color: #0d6efd;
+}
+
+
+
+
+
+

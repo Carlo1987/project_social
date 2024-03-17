@@ -1,0 +1,719 @@
+
+/*               ALLERTE GENERALI               */
+ 
+.alert{
+    font-size: 19px;
+    letter-spacing: 1px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 1px 2px 8px rgb(160, 153, 153);
+} 
+
+
+/*   STILE FORMULARI MODIFICA DATI UTENTE     */
+
+.card-header{
+   font-size: 20px;
+   letter-spacing: 2px;
+   text-align: center;
+   text-transform: uppercase;
+}
+
+button{
+    margin: 0 auto; 
+}
+
+.link_login,
+.link_register{
+    width: 300px;
+    margin: 0 auto; 
+    font-size:17px;
+    margin-top: 12px;
+    background-color: #0d6efd;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.link_login a,
+.link_register a{
+    color: white;
+    text-transform: uppercase;
+}
+
+
+/*       STILE HEADER      */
+
+.starting_menu a{
+    color: rgb(63, 60, 60);
+}
+
+.starting_menu:hover{
+    background-color: #0d6efd;
+    box-shadow: 2px 2px 3px  #92aacd;
+    border-radius: 10px;  
+    padding-right: 10px; 
+    padding-left: 10px;
+
+}
+
+.starting_menu:hover a{
+    color: white;
+}
+
+#container_search{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#search_user{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+.download{
+    cursor: pointer;
+}
+
+
+.button_download{
+    z-index: 1;
+    width: 180px;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    position: absolute;
+    left: -30%;
+    top: 45%;
+}
+
+.button_home{
+    margin-top: 7%;
+    width: 160px !important;
+}
+
+.button_download{
+   margin-top: 7%;
+   right: 490px;
+}
+
+.button_download a{
+    text-decoration: none;
+}
+
+.button_avatar{
+    margin-top: 0.3%;
+    right: 65px;
+}
+
+.button_notications{
+    margin-top: 3%;
+    margin-left: 26%;
+}
+
+#search_user input[type = text]{
+    border-top-left-radius: 10px;
+    border-end-start-radius: 10px;
+    padding-left: 10px;
+}
+
+#search_user input[type = text]:focus{
+    background-color: rgb(254, 250, 247);
+    color: rgb(44, 40, 40);
+    cursor: pointer;
+}
+
+#search_user button{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#search_user img{
+    width: 17px;
+    height: 17px;
+}
+
+.content_search{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.user_found{
+    display: flex;
+    gap: 180px;
+    align-items: center;
+    border-bottom: 1px solid rgb(45, 44, 44);
+}
+
+.user_found img{
+    width: 60px;
+    height: 55px;
+    border-radius: 50px;
+}
+
+.content_search a{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+    padding: 5px;
+}
+
+.content_search a:hover{
+    text-decoration: underline;
+}
+
+.menu_search{
+    border: transparent;
+    padding: 10px;
+}
+
+.li_hover:hover{
+    text-decoration: underline;
+}
+
+#avatar_profile{
+    width: 45px; 
+    height: 42px; 
+    border-radius: 900px;
+     position: relative;
+}
+
+
+#notifications{
+    display: flex;
+    align-items: center;
+}
+
+#notifications a{
+   text-decoration: none;
+   display: flex;
+   align-items: center;
+    margin-left: 6px;
+    cursor: pointer;
+    position: relative; 
+}
+
+#notifications_number{
+    position: absolute; 
+    margin-left: 8px;
+    font-size: 15px; 
+}
+
+
+
+/*       BOTTONE RICHIESTE DI AMICIZIA  (profilo utente)  */
+
+.menu_friendships{
+    background-color: white;
+    border-radius: 10px;
+}
+
+.menu_friendships form{
+    width: 100%;
+}
+
+.menu_friendships form input[type="submit"]:hover{
+    background-color: rgb(253, 244, 244);
+    border-radius: 10px;
+    text-decoration: underline;
+    font-size: 15px;
+}
+
+.confirm_friedship{
+    position: absolute;
+    width: 420px;
+    font-size: 18px;
+    border-radius: 10px;
+    z-index: 2;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid rgb(200, 193, 193);
+    box-shadow: 1px 2px 8px rgb(160, 153, 153);
+     left: 0%;  
+}
+
+
+/*   CONTAINER PRINCIPALE   */
+
+main{
+    margin-top: 60px;
+}
+
+
+/*     STILE CARDS IMMAGINI E VIDEO UTENTI     */
+
+.card{
+    border: 1px solid rgb(200, 193, 193);
+    box-shadow: 1px 2px 8px rgb(160, 153, 153); 
+    margin-bottom: 25px;
+}
+
+.menu_acount a:hover{
+    text-decoration: underline;
+}
+
+.container_avatar{
+    display: flex;
+    width: 617px;
+    align-items: center;
+    justify-self: flex-start;
+    gap: 20px;
+    border-radius: 53px;
+    background-color: white;
+    border: 1px solid rgb(200, 193, 193);
+    box-shadow: 1px 2px 8px rgb(160, 153, 153); 
+} 
+
+.avatar{
+    width: 50%;
+    height: auto;
+}
+
+.avatar img{
+    width: 100%;
+    max-height: 200px;
+    border-radius: 53px;
+}
+
+.navbarProfile{
+    width: 98%;
+    background-color: white;
+    border: 1px solid rgb(200, 193, 193);
+    box-shadow: 1px 2px 8px rgb(160, 153, 153); 
+}
+
+.navbarProfileElements{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 50px;
+    padding-right: 15px;
+}
+
+.navbarProfileElements a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.navbarProfile a:hover{
+    text-decoration: underline;
+}
+
+.buttonProfile{
+    width: 15%;
+    padding-left: 15px;
+}
+
+.titles{
+    border-radius: 18px;
+}
+
+.titles h3{
+    margin: 0 auto;
+    letter-spacing: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.content_images{
+    width: 48%; 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile_content_images{
+    border-radius: 20px;
+}
+
+.user_index{
+    display: flex;
+    justify-content: space-between;
+}
+
+.user_index a{
+    text-decoration: none;
+    color: black;
+    font-size: 23px;
+}
+
+.user_index a:hover{
+    text-decoration: underline;
+}
+
+.user_index img{
+    width: 75px;
+    height: 65px;
+    border-radius: 50px;
+}
+
+/*   CONTAINER RESPONSIVE IMMAGINI E VIDEO  */
+
+.nav_responsive{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 62px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-top: 3px solid black;
+    box-shadow: 1px 2px 8px rgb(160, 153, 153); 
+}
+
+.nav_responsive div{
+    width: 28%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 23px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.container_responsive{
+    display: none;
+}
+
+#button_images_responsive{
+    border: 4px solid black;
+    text-decoration: underline;
+}
+
+#videos_responsive{
+    display: none;
+}
+
+/*    PROFILO UTENTE   */
+
+.profile_content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    min-height: 300px;
+}
+
+.profile_image{
+    width: 100%;
+}
+
+.profile_image img{
+    width: 100%;
+    height: 290px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.profile_comments{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 5px;
+    width: 45%;
+}
+
+.content_videos{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 48%; 
+}
+
+.profile_content_videos{
+    border-radius: 20px;
+}
+
+
+
+
+/*    SEZIONE  LIKE        */
+
+.like{
+    width: 10%;
+    display: flex;
+}
+
+.like_content{
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    margin-left: 5px;
+    padding: 5px;
+    border-bottom: 1px solid black;
+} 
+
+.like img{
+    width: 100%;
+    height: 30px;
+    cursor: pointer;
+}
+
+.likes_count{
+    font-size: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+/*       MENU  A  TENDINA  LIKES      */
+
+.likes_count ul{
+    display: none;
+    width: auto;
+    height: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: absolute;
+    left: 10%;
+    top: 0%;
+    border-radius: 20px;
+    z-index: 2;
+    background-color: white;
+    border: 1px solid rgb(200, 193, 193);
+    box-shadow: 1px 2px 8px rgb(160, 153, 153); 
+}
+
+.likes_count:hover ul{
+    display: block;
+}
+
+.likes_users{
+    list-style: none;
+    display: flex;
+    gap: 5px;
+    padding: 4px;
+    padding-right: 30px;
+}
+
+.likes_users img{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.likes_users a{
+    text-decoration: none;
+    color: black;
+    font-size: 21px;
+}
+
+.likes_users a:hover{
+    text-decoration: underline;
+    font-size: 20px;
+  
+}
+
+
+/*    SEZIONE  COMMENTI     */
+
+
+.comments a{
+    height: auto;
+    padding-left: 0px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: flex;
+    align-items: center;
+    border-radius: 20px; 
+    background-color: rgba(232, 231, 231, 0.949);
+    box-shadow: 1px 1px 2px rgb(215, 212, 212);
+}
+
+.form_comments input[type="text"],
+.button_comments button{
+    background-color: rgba(232, 231, 231, 0.949);
+    box-shadow: 1px 1px 2px rgb(215, 212, 212);
+} 
+
+.button_comments button{
+    height: 25px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding-top: 9px;
+}
+
+.button_comments ul{
+    background-color: white;
+    padding-left: 4px;
+}
+
+.button_comments ul li,
+.button_comments ul li a{
+    background-color: white;
+    box-shadow: none;
+    border: transparent;
+}
+
+.button_comments ul li:hover{
+    text-decoration: underline;
+}
+
+
+.arrow{
+    width: 25px; 
+    height:25px; 
+    border: transparent !important;
+    border-radius: 500px !important;
+}
+
+
+
+
+
+
+/*      COMMENTI  TOTALI      */
+
+.comments_total{
+    width: 60%;
+}
+
+
+
+/*        DETTAGLI  IMMAGINI  E  VIDEO    */
+
+.navbarCarouselDetail{
+    width: 75%;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid rgb(200, 193, 193);
+    box-shadow: 1px 2px 8px rgb(160, 153, 153); 
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+ .content_details{
+    width: 75%;
+    height: auto;
+    margin: 0 auto;
+}
+
+ .content_row{
+    width: 100%;
+    min-height: 500px;
+}
+
+.content_files{
+    width: 52%;
+    border-radius: 10px;
+    padding: 10px;
+    float: left; 
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid rgb(200, 193, 193);
+    box-shadow: 1px 2px 8px rgb(160, 153, 153); 
+}
+
+.menu_delete_elements ul{
+    display: none !important;
+    width: 200px; 
+    height: 60px;
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: normal;
+    list-style: none;
+    display: flex;
+    flex-direction: column; 
+    position:absolute; 
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color:  white;
+    z-index: 1;
+}
+
+.menu_delete_elements:hover ul{
+    display: block !important;
+}
+
+.menu_delete_elements ul li{
+    width: 100%;
+    text-align: left;
+    padding-top: 10px;
+}
+
+.menu_delete_elements ul li a{
+    font-size: 15px;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.menu_delete_elements ul li:hover,
+.menu_delete_elements ul li a:hover{
+    text-decoration: underline;
+}
+
+.confirm{
+    position: absolute; 
+    width: 400px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    top: 0px;
+    z-index: 1;
+    border-radius: 10px;
+    background-color:  white;
+    border: 1px solid black;
+}
+
+.confirm .confirm_choise,
+.confirm_choise form{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.description_detail{
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+    min-height: 40px;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.content_detail{
+    width: 45%;
+    height: auto;
+    padding: 10px;
+    border-radius: 10px;
+    float: right; 
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid rgb(200, 193, 193);
+    box-shadow: 1px 2px 8px rgb(160, 153, 153); 
+}
+
+.content_detail h3{
+    text-align: center;
+    border-radius: 10px;
+}
+
+.clearfix{
+    float: none;
+    clear: both;
+} 
+
+

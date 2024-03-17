@@ -1,0 +1,15 @@
+LISTA DEGLI UTENTI PRESENTI: 
+ i profili 'public' sono visibili a tutti, i 'private' solo se si è prima amici 
+ 
+---  Utenti  fittizzi  --- ( Puoi entrare nei loro profili ) 
+email = carlo@gmail.com  ---  password = carlo  --- tipo profilo = Pubblico
+email = sara@gmail.com  ---  password = sara  --- tipo profilo = Privato
+email = alessandro@gmail.com  ---  password = alessandro  --- tipo profilo = Pubblico
+email = alejandra@gmail.com  ---  password = alejandra  --- tipo profilo = Privato
+email = marcello@gmail.com  ---  password = marcello  --- tipo profilo = Pubblico
+email = sofia@gmail.com  ---  password = sofia  --- tipo profilo = Pubblico
+
+ 
+---  Utenti  reali  ---
+ nome = Maura  ---  cognome = Fois  --- nickname = mauretta  --- tipo profilo = Privato
+nome = Antonio  ---  cognome = Loi  --- nickname = antoneddu  --- tipo profilo = Pubblico
