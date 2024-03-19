@@ -18,23 +18,20 @@ use Illuminate\Http\Response;
 |
 */
 
+const i = "/index.php";
 
 //////////////   rotte generali   /////////////////////////
 Auth::routes(['verify' => true]);   //  aggiungo verify per verifica email per registrazione utente
-Route::get('/', 'App\Http\Controllers\HomeController@index' /* function(){  return view('auth.register');   }*/)->name('home');
-Route::get('/login', function(){  return view('auth.login');  })->name('login'); 
-//Route::get('/home','App\Http\Controllers\HomeController@index')->name('home');
+Route::get('/',  function(){  return view('auth.login');  } )->name('home');
+Route::get(i.'/login', function(){  return view('auth.login');  })->name('login.view'); 
+Route::get(i.'/register', function(){  return view('auth.register');  })->name('register.view'); 
+Route::get('/home', function(){  return view('home');  });
 
-//Route::post('login', 'App\Http\Controlles\RealLoginController@login')->name('login'); 
 
-Route::get('download', function(){
+Route::get('/download', function(){
        $users = User::all();
        $pdf = PDF::loadView('pdf.pdf',['users'=>$users]);    
        return $pdf->stream();
-});
-
-Route::get('/prova', function(){
-       return "prova";
 });
 
 
@@ -46,7 +43,7 @@ Route::get('user/editPassword', 'App\Http\Controllers\UserController@editPasswor
 Route::post('user/updatePassword', 'App\Http\Controllers\UserController@updatePassword')->name('updatePassword');
 Route::get('user/avatar', 'App\Http\Controllers\UserController@avatar')->name('avatar');
 Route::post('user/updateAvatar', 'App\Http\Controllers\UserController@updateAvatar')->name('updateAvatar');
-Route::get('user/getAvatar/{avatar?}', 'App\Http\Controllers\UserController@getAvatar')->name('getAvatar');
+Route::get('/user/getAvatar/{avatar?}', 'App\Http\Controllers\UserController@getAvatar')->name('getAvatar');
 Route::get('user/theme', 'App\Http\Controllers\UserController@theme')->name('theme');
 Route::post('user/changeTheme', 'App\Http\Controllers\UserController@change_theme')->name('change.theme');
 Route::get('user/delete/{id}', 'App\Http\Controllers\UserController@delete')->name('user.delete');

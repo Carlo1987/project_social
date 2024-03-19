@@ -1,6 +1,6 @@
 import { Axios } from "axios";
 
-const url = "https://"+document.location.hostname+"/laravel/progetto_social/public/";
+const url = "https://"+document.location.hostname+"/progetti/progetto_social/social/public/index.php/";
 
 window.addEventListener("load", function () {
 

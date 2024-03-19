@@ -138,7 +138,7 @@
                
 
                         <div class="link_login">
-                            Se sei già registrato effettua il <a href="{{ url('login_view') }}">Login</a>
+                            Se sei già registrato effettua il <a href="{{ route('login.view') }}">Login</a>
                         </div>
                     </form>
                 </div>

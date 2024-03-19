@@ -60,7 +60,7 @@
                         </div>
 
                         <div class="link_register">
-                            Se non sei registrato, accedi<a href="{{ route('register') }}"> qui</a>
+                            Se non sei registrato, accedi<a href="{{ route('register.view') }}"> qui</a>
                         </div>
 
                     </form>

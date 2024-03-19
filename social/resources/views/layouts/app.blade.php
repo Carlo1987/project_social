@@ -47,11 +47,11 @@
 
                  <ul class="navbar-nav d-flex flex-row gap-4 fs-4">
                         <li class="nav-item me-2 starting_menu">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link" href="{{ route('login.view') }}">{{ __('Login') }}</a>
                         </li>
               
                         <li class="nav-item starting_menu">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Registrati') }}</a>
+                            <a class="nav-link" href="{{ route('register.view') }}">{{ __('Registrati') }}</a>
                         </li>
                  </ul>
           
@@ -116,7 +116,9 @@
 
                             <div class="menu_acount dropdown-menu dropdown-menu-end {{ Themes::show(Auth::user()->id) }} div_{{ Themes::show(Auth::user()->id) }} position-absolute" aria-labelledby="navbarDropdown">
 
-                            @if(Auth::user()->id == 1 || Auth::user()->id > 19)
+                          
+
+                            
                                 <a class="dropdown-item" href="{{ route('editDatos') }}">
                                     Modifica dati Acount
                                 </a>
@@ -132,7 +134,13 @@
                                 <a class="dropdown-item" href="{{ route('theme') }}">
                                    Cambia temi
                                 </a>
-                            @endif
+                        
+
+
+
+
+
+
                                 <a class="dropdown-item logout_{{ Themes::show(Auth::user()->id) }}" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
