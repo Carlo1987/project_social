@@ -117,7 +117,7 @@
                             <div class="menu_acount dropdown-menu dropdown-menu-end {{ Themes::show(Auth::user()->id) }} div_{{ Themes::show(Auth::user()->id) }} position-absolute" aria-labelledby="navbarDropdown">
 
                           
-
+                            @if(Auth::user()->id == 1 || Auth::user()->id > 19)
                             
                                 <a class="dropdown-item" href="{{ route('editDatos') }}">
                                     Modifica dati Acount
@@ -135,11 +135,7 @@
                                    Cambia temi
                                 </a>
                         
-
-
-
-
-
+                            @endif
 
                                 <a class="dropdown-item logout_{{ Themes::show(Auth::user()->id) }}" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
