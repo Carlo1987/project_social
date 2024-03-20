@@ -21,7 +21,7 @@ class LikeController extends Controller
         $like = new Like();
 
         $like->user_id = Auth::user()->id;
-        $like->image_id = $image_id;
+        $like->image_id = (int)$image_id;
         $like->video_id = null;
 
         $like->save();
@@ -34,27 +34,7 @@ class LikeController extends Controller
     }
 
 
-    ////////////      ELIMINARE LIKE PER UN' IMMAGINE   ////////////
-
-    public function dislike_image($image_id)
-    {
-        $user = Auth::user();
-
-        $like = Like::where('user_id', $user->id)
-            ->where('image_id', $image_id)
-            ->first();
-
-        $image = $image_id;
-        $nick = $like->user->nick;
-
-        $like->delete();
-
-        return response()->json([
-            'image' => $image,
-            'nick' => $nick,
-        ]);
-    }
-
+   
     ////////////      CREARE LIKE PER UN VIDEO   ////////////
 
     public function like_video($video_id)
@@ -67,14 +47,33 @@ class LikeController extends Controller
 
         $like->save();
 
-        //$file = Storage::disk('videos')->get($like->video->name);
-
         return response()->json([
             'user_img' => $like->user->img,
             'user_id' => $like->user->id,
             'user_nick' => $like->user->nick,
         ]);
     }
+
+
+     ////////////      ELIMINARE LIKE PER UN' IMMAGINE   ////////////
+
+     public function dislike_image($image_id)
+     {
+         $user = Auth::user();
+ 
+         $like = Like::where('user_id', $user->id)
+             ->where('image_id', $image_id)
+             ->first();
+
+        $nick =  $like->user->nick;
+  
+         $like->delete();
+ 
+         return response()->json([
+             'file' => $image_id,
+             'nick' => $nick
+         ]);
+     }
 
     ////////////      ELIMINARE LIKE PER UN VIDEO   ////////////
 
@@ -86,13 +85,12 @@ class LikeController extends Controller
             ->where('video_id', $video_id)
             ->first();
 
-        $video = $video_id;
-        $nick = $like->user->nick;
+        $nick =  $like->user->nick;
 
         $like->delete();
 
         return response()->json([
-            'video' => $video,
+            'file' => $video_id,
             'nick' => $nick,
         ]);
     }

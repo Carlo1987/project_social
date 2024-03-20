@@ -1,6 +1,8 @@
 import { Axios } from "axios";
 
-const url = "https://"+document.location.hostname+"/progetti/progetto_social/social/public/index.php/";
+const url = "https://"+document.location.hostname+"/progetti/progetto_social/social/public/";
+const url_download = "https://"+document.location.hostname+"/progetti/progetto_social/social/public/index.php/";
+const url_files = "https://"+document.location.hostname+"/progetti/progetto_social/social/storage/app/";
 
 window.addEventListener("load", function () {
 
@@ -34,7 +36,7 @@ window.addEventListener("load", function () {
     
     downloads.forEach(download=>{
         download.onclick = function(){
-            window.open(url+'download');
+            window.open(url_download+'download');
          }
     })
 
@@ -43,120 +45,86 @@ window.addEventListener("load", function () {
         
 
 
-    //////////////       LIKE  IMMAGINI E VIDEO    /////////////////////////
+    //////////////       LIKE  IMMAGINI E VIDEO    /////////////////////////   
 
     let likes = document.querySelectorAll("#heart");     //  immagini del "cuore", Like
-    let counts = document.querySelectorAll('.count');    // span che contiene numero totale likes
-    let like_users_menus = document.querySelectorAll('.likes_count ul');  // menù a tendina contenente gli utenti che hanno messo like
+
+    function like_function(index, class_removed, class_added , data){     
+        let counts = document.querySelectorAll('.count');    // span che contiene numero totale likes           
+        let like_users_menus = document.querySelectorAll('.likes_count ul');  // menù a tendina contenente gli utenti che hanno messo like
+        let id = likes[index].getAttribute("data-id");
+
+        likes[index].classList.remove(class_removed);
+        likes[index].classList.add(class_added);
+        counts[index].innerHTML = parseInt(counts[index].textContent) + 1;
+        likes[index].setAttribute("src", url+"img/red_heart.png");
+
+         fetch(url_download + class_added + "/" + id)
+            .then((response) => response.json())
+            .then((dates) => {
+
+                let li = `<li class="likes_users" ${data}="${id}" >
+                <div> <img scr="${url_download}user/getAvatar/${dates.user_img}" > </div>
+                <div> <a href="${url_download}users/${dates.user_id}">
+                     @${dates.user_nick}
+                 </a> </div> </li> `;
+
+                 like_users_menus[index].insertAdjacentHTML('afterbegin', li);
+                }); 
+    }
+
+
+
+    function dislike_function(index , class_removed , class_added , data_file){
+        let counts = document.querySelectorAll('.count');    // span che contiene numero totale likes
+        let like_users = document.querySelectorAll('.likes_users');  //  utenti che hanno messo il like
+        let id = likes[index].getAttribute("data-id");
+   
+        likes[index].classList.remove(class_removed);
+        likes[index].classList.add(class_added);
+        counts[index].innerHTML = parseInt(counts[index].textContent) - 1;
+        likes[index].setAttribute("src", url+"img/black_heart.png");
+
+        fetch(url_download + class_added + "/" + id)
+            .then((response) => response.json())
+            .then((data) =>{
+
+                like_users.forEach((element,index)=>{
+                  let nick = element.innerText;
+                  nick = nick.trim().split('');
+                  nick.shift();
+                  nick = nick.join('');
+           
+                    let file_id = element.getAttribute(data_file);
+                  
+                    if(file_id == data.file && nick == data.nick){
+                        like_users[index].style.display = "none";
+                    }
+            })
+        });
+    }
+        
 
     likes.forEach((heart, index) => {
         heart.addEventListener("click", () => {
        
 
             if (likes[index].className == "dislike_image") {
-                let id = likes[index].getAttribute("data-id");
 
-                likes[index].classList.remove("dislike_image");
-                likes[index].classList.add("like_image");
-                counts[index].innerHTML = parseInt(counts[index].textContent) + 1;
-                likes[index].setAttribute("src", url+"img/red_heart.png");
-               
-                fetch(url + "like_image/" + id)
-                    .then((response) => response.json())
-                    .then((dates) => {
-                        let li = `<li class="likes_users">
-                        <div> <img scr="${url}user/getAvatar/${dates.user_img}" > </div>
-                        <div> <a href="${url}users/${dates.user_id}">
-                             @${dates.user_nick}
-                         </a> </div> </li> `;
-            
-                         like_users_menus[index].insertAdjacentHTML('afterbegin', li);   
-                    });
-
-              
+                like_function(index , "dislike_image", "like_image" , "data-imageID");             
 
             } else if (likes[index].className == "like_image") {
-                let id = likes[index].getAttribute("data-id");
-               
 
-                likes[index].classList.remove("like_image");
-                likes[index].classList.add("dislike_image");
-                counts[index].innerHTML = parseInt(counts[index].textContent) - 1;
-                likes[index].setAttribute("src", url+"img/black_heart.png");
-              
-                fetch(url + "dislike_image/" + id)
-                .then((response) => response.json())
-                .then((dates) =>{
-                    let like_users = document.querySelectorAll('.likes_users');  //  utenti che hanno messo il like
-              
-                 like_users.forEach((element,index)=>{
-                    let nick = element.innerText;
-                    nick = nick.trim().split('');
-                    nick.shift();
-                    nick = nick.join('');
-
-                        let image_id = element.getAttribute("data-imageID");
-                      
-                        if(image_id == dates.image && nick == dates.nick){
-                            like_users[index].style.display = "none";
-                        }
-                })
-            });
-
-                
-
+               dislike_function(index , "like_image" , "dislike_image" , "data-imageID");
 
             } else if (likes[index].className == "dislike_video") {
-                let id = likes[index].getAttribute("data-id");
 
-                likes[index].classList.remove("dislike_video");
-                likes[index].classList.add("like_video");
-                counts[index].innerHTML = parseInt(counts[index].textContent) + 1;
-                likes[index].setAttribute("src", url+"img/red_heart.png");
-
-                fetch(url + "like_video/" + id)
-                    .then((response) => response.json())
-                    .then((dates) => {
-
-                        let li = `<li class="likes_users">
-                        <div> <img scr="${url}user/getAvatar/${dates.user_img}" > </div>
-                        <div> <a href="${url}users/${dates.user_id}">
-                             @${dates.user_nick}
-                         </a> </div> </li> `;
-               
-                         like_users_menus[index].insertAdjacentHTML('afterbegin', li);
-                    });
-
-          
-
+                like_function(index , "dislike_video", "like_video" , "data-videoID");
 
             } else if (likes[index].className == "like_video") {
-                let id = likes[index].getAttribute("data-id");
-           
 
-                likes[index].classList.remove("like_video");
-                likes[index].classList.add("dislike_video");
-                counts[index].innerHTML = parseInt(counts[index].textContent) - 1;
-                likes[index].setAttribute("src", url+"img/black_heart.png");
-
-                fetch(url + "dislike_video/" + id)
-                    .then((response) => response.json())
-                    .then((dates) =>{
-                        let like_users = document.querySelectorAll('.likes_users');  //  utenti che hanno messo il like
-              
-                     like_users.forEach((element,index)=>{
-                          let nick = element.innerText;
-                          nick = nick.trim().split('');
-                          nick.shift();
-                          nick = nick.join('');
-                   
-                            let video_id = element.getAttribute("data-videoID");
-                          
-                            if(video_id == dates.video && nick == dates.nick){
-                                like_users[index].style.display = "none";
-                            }
-                    })
-                });
+                dislike_function(index , "like_video" , "dislike_video" , "data-videoID");
+       
             }
         });
     });

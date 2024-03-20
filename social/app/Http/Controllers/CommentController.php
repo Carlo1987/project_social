@@ -21,35 +21,29 @@ class CommentController extends Controller
     {
         $comment = new Comment();
 
-        if($request->input('type') == 'image'){
-            $request->validate([
-                'img_id' => 'integer',
-                'comment' => 'string'
-            ]);
-          
-            $comment->user_id =  Auth::user()->id;
-            $comment->image_id =  $request->input('img_id');
-            $comment->video_id =  null;
-            $comment->comment =   $request->input('comment');
-            
+        $request->validate([
+            'file_id' => 'integer',
+            'comment' => 'string'
+        ]);
 
-        }else if($request->input('type') == 'video'){
-            $request->validate([
-                'video_id' => 'integer',
-                'comment' => 'string'
-            ]);
-          
-            $comment->user_id =  Auth::user()->id;
+        $comment->user_id =  Auth::user()->id;
+        $comment->comment =   $request->input('comment');
+
+       if($request->input('type') == 'video'){
+     
             $comment->image_id =  null;
-            $comment->video_id = $request->input('video_id');
-            $comment->comment = $request->input('comment');
+            $comment->video_id = $request->input('file_id');
+       
+        }else{
             
+            $comment->image_id =  $request->input('file_id');
+            $comment->video_id = null;
         }
 
         $comment->save();
        
-        $url = url()->previous(); 
-        return redirect($url);    
+         $url = url()->previous(); 
+        return redirect($url);     
     } 
 
 

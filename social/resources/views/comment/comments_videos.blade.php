@@ -53,7 +53,7 @@
                 <input type="text" name="comment" placeholder="scrivi un commento..." class="w-100 rounded-5 ms-1 ps-3 py-1 border border-0 fs-5">
             </div>
 
-            <input type="hidden" name="img_id" value="{{ $video->id }}">
+            <input type="hidden" name="file_id" value="{{ $video->id }}">
             <input type="hidden" name="type" value="video">
 
             <div class="col-2 ps-0">
