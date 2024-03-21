@@ -15,7 +15,6 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link rel="icon" type="image/jpeg" href="{{ asset('img/logo_facebook.jpeg') }}">
 
-    <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
     <script src="https://kit.fontawesome.com/b476d70dd7.js" crossorigin="anonymous"></script>
 
     <!-- Scripts -->

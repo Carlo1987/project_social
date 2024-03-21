@@ -1,8 +1,10 @@
 import { Axios } from "axios";
 
-const url = "https://"+document.location.hostname+"/progetti/progetto_social/social/public/";
-const url_download = "https://"+document.location.hostname+"/progetti/progetto_social/social/public/index.php/";
-const url_files = "https://"+document.location.hostname+"/progetti/progetto_social/social/storage/app/";
+let project_name = "progetto_social";
+
+const url = `https://${document.location.hostname}/progetti/${project_name}/social/public/`;
+const url_complete = `https://${document.location.hostname}/progetti/${project_name}/social/public/index.php/`;
+const url_files = `https://${document.location.hostname}/progetti/${project_name}/social/storage/app/`;
 
 window.addEventListener("load", function () {
 
@@ -36,7 +38,7 @@ window.addEventListener("load", function () {
     
     downloads.forEach(download=>{
         download.onclick = function(){
-            window.open(url_download+'download');
+            window.open(url_complete+'download');
          }
     })
 
@@ -59,13 +61,13 @@ window.addEventListener("load", function () {
         counts[index].innerHTML = parseInt(counts[index].textContent) + 1;
         likes[index].setAttribute("src", url+"img/red_heart.png");
 
-         fetch(url_download + class_added + "/" + id)
+         fetch(url_complete + class_added + "/" + id)
             .then((response) => response.json())
             .then((dates) => {
 
                 let li = `<li class="likes_users" ${data}="${id}" >
-                <div> <img scr="${url_download}user/getAvatar/${dates.user_img}" > </div>
-                <div> <a href="${url_download}users/${dates.user_id}">
+                <div> <img scr="${url_complete}user/getAvatar/${dates.user_img}" > </div>
+                <div> <a href="${url_complete}users/${dates.user_id}">
                      @${dates.user_nick}
                  </a> </div> </li> `;
 
@@ -85,7 +87,7 @@ window.addEventListener("load", function () {
         counts[index].innerHTML = parseInt(counts[index].textContent) - 1;
         likes[index].setAttribute("src", url+"img/black_heart.png");
 
-        fetch(url_download + class_added + "/" + id)
+        fetch(url_complete + class_added + "/" + id)
             .then((response) => response.json())
             .then((data) =>{
 
@@ -161,9 +163,9 @@ destroy_image.forEach((button)=>{
         }
 
         accept.onclick = function(){
-            fetch(url + "image/delete/" + id)
+            fetch(url_complete + "image/delete/" + id)
             .then((response) => response.json())
-            .then((dates) => window.location.href = url+"image/detail/"+dates.last_image)
+            .then((dates) => window.location.href = url_complete+"image/detail/"+dates.last_image)
           
             div.remove(); 
         }
@@ -203,9 +205,9 @@ destroy_video.forEach((button)=>{
         }
 
         accept.onclick = function(){
-            fetch(url + "video/delete/" + id)
+            fetch(url_complete + "video/delete/" + id)
             .then((response) => response.json())
-            .then((dates) => window.location.href = url+"video/detail/"+dates.last_video)
+            .then((dates) => window.location.href = url_complete+"video/detail/"+dates.last_video)
           
             div.remove(); 
         }
@@ -251,7 +253,7 @@ const container_videos = document.querySelector('#videos_responsive');
        buttonChat.onclick = function(e){
            e.preventDefault();
            let id = buttonChat.getAttribute('data-id');
-           window.open(url+'chat/'+id);
+           window.open('http://localhost:3000/Progetto_social-Chat');
        } 
 
 

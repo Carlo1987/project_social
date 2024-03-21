@@ -50,9 +50,9 @@ Route::get('user/delete/{id}', 'App\Http\Controllers\UserController@delete')->na
 Route::get('user/deleteAcount/{id}', 'App\Http\Controllers\UserController@deleteAcount')->name('deleteAcount');
 Route::post('user/search','App\Http\Controllers\UserController@search')->name('user.search');
 
-Route::get('chat/{id}', 'App\Http\Controllers\PusherController@index')->name('user.chat');
-Route::post('broadcast', 'App\Http\Controllers\PusherController@broadcast')->name('sendMessage');
-Route::post('receive', 'App\Http\Controllers\PusherController@receive'); 
+Route::get('chat/{id}', function(){
+       return view('chat.index');
+});
 
 //////////////   rotte per verifica Acount e reset password  utente   /////////////////////////
 

@@ -1,18 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO" crossorigin="anonymous"></script>
-    <script src="main.js"></script> 
-    <title>Chat Progetto Social</title>
-</head>
-<body>
-    <h2> Chat Progetto Social </h2>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <title>Progetto Social - Chat</title>
 
-    <form onsubmit="return add_message(this)">
-        <input type="submit" value="Invia messaggio">
+
+    <style>
+
+        body{
+            background-color: rgba(232, 231, 231, 0.949);
+        }
+
+        h2{
+            margin-top: 15px;
+            color: #0d6efd;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgb(48, 46, 46);
+        }
+
+        #messages{
+            border: 1px solid red;
+            width: 98%;
+            margin: 0 auto;
+        }
+
+         form{
+            width: 98%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        } 
+
+        form input{
+            height: 43px;
+             width: 90%; 
+            border-radius: 5px;
+        }
+
+        @media(max-width:980px){
+            form input{
+                width: 84%;
+            }
+        }
+
+        @media(max-width:600px){
+            form input{
+                width: 77%;
+            }
+        }
+
+    </style>
+
+  </head>
+
+  <body>
+
+   
+    <h2>  <i class="fa fa-facebook-square" aria-hidden="true"></i>   Progetto Social - CHAT </h2>
+
+    <ul id="messages"></ul>
+
+    <form action="" class="fixed-bottom mb-2">
+            <input id="text_message" type="text" autocomplete="off" /> 
+            <button type="submit" class="btn btn-primary mb-2 px-4 fs-5">Invia</button>
     </form>
-    
-</body>
+
+
+
+
+
+
+
+    <script>
+
+      let socket = io();
+
+      const form = document.querySelector("form");
+      const input = document.querySelector("#text_message");
+      const messages = document.querySelector("#messages");
+
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (input.value) {
+          socket.emit("chat", input.value);
+          input.value = "";
+        }
+      });
+
+
+      socket.on("chat", (message) => {
+        let li = document.createElement("li");
+        li.append(message);
+        messages.insertAdjacentElement("beforeend", li);
+        window.scrollTo(0, document.body.scrollHeight);
+      });
+
+    </script>
+  </body>
 </html>
