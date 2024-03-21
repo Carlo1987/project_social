@@ -1,3 +1,5 @@
+'use strict';
+
 const mysql = require('mysql');
 const database = 'progetto_facebook';
 
@@ -8,12 +10,13 @@ let connection = mysql.createConnection({
     password : ''
 })
 
-connection.connect(function(error){
-    if(error){
-        throw error;
-    }else{
-        console.log('Collegamento al database '+ database + ' avvenuto con successo');
-    }
-})
 
-connection.end();
+
+function executeQuery(sql,callback){
+    //connection.connect();
+    connection.query(sql,callback);
+   // connection.end();
+}
+
+
+module.exports = executeQuery;

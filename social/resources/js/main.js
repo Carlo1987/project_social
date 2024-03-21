@@ -252,8 +252,10 @@ const container_videos = document.querySelector('#videos_responsive');
        const buttonChat = this.document.querySelector('.buttonChat');
        buttonChat.onclick = function(e){
            e.preventDefault();
-           let id = buttonChat.getAttribute('data-id');
-           window.open('http://localhost:3000/Progetto_social-Chat');
+           let user_id = buttonChat.getAttribute('data-user_id');
+           let friend_id = buttonChat.getAttribute('data-friend_id');
+          window.open(`http://localhost:3000/Progetto_social-Chat?user=${user_id}&friend=${friend_id}`);
+         // window.open(url_complete+'chat');
        } 
 
 

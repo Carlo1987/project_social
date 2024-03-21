@@ -50,7 +50,7 @@ Route::get('user/delete/{id}', 'App\Http\Controllers\UserController@delete')->na
 Route::get('user/deleteAcount/{id}', 'App\Http\Controllers\UserController@deleteAcount')->name('deleteAcount');
 Route::post('user/search','App\Http\Controllers\UserController@search')->name('user.search');
 
-Route::get('chat/{id}', function(){
+Route::get('chat', function(){
        return view('chat.index');
 });
 

@@ -10,20 +10,48 @@
     <style>
 
         body{
-            background-color: rgba(232, 231, 231, 0.949);
+            background-color: rgba(222, 218, 218, 0.949);
         }
 
         h2{
             margin-top: 15px;
             color: #0d6efd;
             text-align: center;
+            font-size: 40px;
+            letter-spacing: 1px;
             text-shadow: 1px 1px 2px rgb(48, 46, 46);
         }
 
         #messages{
-            border: 1px solid red;
+            border: 2px solid rgb(23, 22, 22);
+            box-shadow: 1px 1px 2px rgb(168, 161, 161);
+            border-radius: 8px;
             width: 98%;
             margin: 0 auto;
+            height: 580px;
+            background-color: white;
+            list-style: none;
+        }
+
+        #messages li{
+           border: 1px solid black;
+           border-radius: 10px;
+           width: 85%;
+           padding: 5px;
+           margin-top: 5px;
+           margin-bottom: 5px;
+           background-color: rgb(242, 230, 230);
+        }
+
+        .message_friend{
+            float: left;
+            background-color: white;
+        }
+
+        .message_user{
+            float: right;
+            margin-right: 40px;
+            background-color: rgb(121, 202, 125);
         }
 
          form{
@@ -35,7 +63,8 @@
 
         form input{
             height: 43px;
-             width: 90%; 
+            width: 90%; 
+            padding-left: 10px;
             border-radius: 5px;
         }
 
@@ -85,7 +114,11 @@
       form.addEventListener("submit", (e) => {
         e.preventDefault();
         if (input.value) {
-          socket.emit("chat", input.value);
+            let data = {
+                id : 2,
+                message : input.value
+            }
+          socket.emit("chat", data);
           input.value = "";
         }
       });

@@ -7,7 +7,7 @@
     Amici da {{ FormatTime::time($friendlist->created_at) }}
     </button>
     <ul class="dropdown-menu  w-auto position-absolute pt-0 fs-5 z-2 rounded"  style="background-color: white; "> 
-        <a href="#" data-id="{{ $user->id }}" class="dropdown-item link-primary w-100 buttonChat">   <!-- collegamento fatto con JS -->
+        <a href="#" data-user_id="{{ Auth::user()->id }}" data-friend_id="{{ $user->id }}" class="dropdown-item link-primary w-100 buttonChat">   <!-- collegamento fatto con JS -->
             INIZIA CHAT
         </a>
   
