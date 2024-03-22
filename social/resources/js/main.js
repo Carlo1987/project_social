@@ -15,7 +15,7 @@ window.addEventListener("load", function () {
 
    //////////////      BOTTONI PER DOWNLOAD DELLA LISTA DEGLI UTENTI   /////////////////////////
 
-    const downloads= document.querySelectorAll('.download');
+    const download_button= document.querySelectorAll('.download');
     const downloadHover = this.document.querySelector('.downloadHover');
 
     downloadHover.addEventListener('mouseover', function(){
@@ -36,13 +36,11 @@ window.addEventListener("load", function () {
     })
 
     
-    downloads.forEach(download=>{
+    download_button.forEach(download=>{
         download.onclick = function(){
             window.open(url_complete+'download');
          }
     })
-
-
 
         
 
@@ -254,8 +252,11 @@ const container_videos = document.querySelector('#videos_responsive');
            e.preventDefault();
            let user_id = buttonChat.getAttribute('data-user_id');
            let friend_id = buttonChat.getAttribute('data-friend_id');
-          window.open(`http://localhost:3000/Progetto_social-Chat?user=${user_id}&friend=${friend_id}`);
-         // window.open(url_complete+'chat');
+
+           localStorage.setItem('user_auth',user_id);
+
+           window.open(`http://localhost:3000/Progetto_Social-Chat?user=${user_id}&friend=${friend_id}`);
+        ///  window.open(url_complete+'chat');
        } 
 
 

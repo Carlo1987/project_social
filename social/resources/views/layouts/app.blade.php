@@ -22,6 +22,9 @@
 </head>
 
 @if(Auth::check())    <!-- se si è loggati -->
+
+
+
 <body class="bg_{{ Themes::show(Auth::user()->id) }}">
 
     <div id="app">

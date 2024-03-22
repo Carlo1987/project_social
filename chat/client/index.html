@@ -106,6 +106,12 @@
 
       let socket = io();
 
+      if(localStorage.getItem('user_auth')){
+        console.log('ok');
+      }else{
+        console.log('no');
+      }
+
       const form = document.querySelector("form");
       const input = document.querySelector("#text_message");
       const messages = document.querySelector("#messages");

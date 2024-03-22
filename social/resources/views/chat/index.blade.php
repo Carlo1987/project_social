@@ -20,14 +20,28 @@
     <script>
 
       $(function(){
-        let ip = "127.0.0.1";
+        let ip = "192.168.1.51";
         let port = "3000";
 
-        let socket = io('http://'+ip+':'+port);  
+        let socket = io('http://localhost:3000');  
 
+       // socket.on('connection');
 
+        form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if ($('#text_message').value != '') {
+          socket.emit("chat", $('#text_message').value);
+          $('#text_message').value = "";
+        }
+        });
 
-        socket.on('connection');
+        socket.on("chat", (message) => {
+        let li = document.createElement("li");
+        li.append(message);
+        messages.insertAdjacentElement("beforeend", li);
+        window.scrollTo(0, document.body.scrollHeight);
+        })
+
       })
 
      

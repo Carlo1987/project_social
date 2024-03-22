@@ -6,6 +6,7 @@ use Barryvdh\DomPDF\Facade\Pdf as PDF;    //  aggiunto per creare / accedere ai 
 use Illuminate\Support\Facades\App;      //  aggiunto per creare / accedere ai pdf - metodo1
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Response; 
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,11 +24,13 @@ const i = "/index.php";
 //////////////   rotte generali   /////////////////////////
 Auth::routes(['verify' => true]);   //  aggiungo verify per verifica email per registrazione utente
 Route::get('/',  function(){  return view('auth.login');  } )->name('home');
+Route::post(i.'/login', 'App\Http\Controllers\Auth\LoginCustomController@login')->name('login');
 Route::get(i.'/login', function(){  return view('auth.login');  })->name('login.view'); 
 Route::get(i.'/register', function(){  return view('auth.register');  })->name('register.view'); 
-Route::get('/home', function(){  return view('home');  });
+Route::get('/home', function(){  return view('home');  })->name('welcome');
 
 
+//////////////   rotte download lista utenti   /////////////////////////
 Route::get('/download', function(){
        $users = User::all();
        $pdf = PDF::loadView('pdf.pdf',['users'=>$users]);    

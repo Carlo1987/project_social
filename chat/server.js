@@ -18,11 +18,12 @@ const http = require('http');
 const server = http.createServer(app);
 
 const { Server } = require('socket.io');
-const io = new Server(server);
+const io = new Server(server); 
 
 
 
-io.on('connection', (socket) => {       
+io.on('connection', (socket) => {     
+    console.log('utente connesso');  
     
     socket.on('chat',(data)=>{
         io.emit('chat',data.message);
@@ -32,9 +33,7 @@ io.on('connection', (socket) => {
 });
 
 
-app.get('/Progetto_social-Chat',(req,res)=>{
-    let user_id = req.query.user;
-    let friend_id = req.query.friend;
+app.get('/Progetto_Social-Chat',(req,res)=>{
 
     req.session.users = {
         user :  req.query.user,
@@ -49,7 +48,7 @@ app.get('/Progetto_social-Chat',(req,res)=>{
         }
     }) 
 
-     res.sendFile(`${__dirname}/client/index.html`); 
+     res.sendFile(`${__dirname}/client/index.html`);  
 })
 
 
