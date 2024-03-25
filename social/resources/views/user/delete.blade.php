@@ -11,7 +11,9 @@
     </div>
 
     <div class="confirm_choise">
-        <form method="GET" action="{{ route('deleteAcount', ['id'=>$user->id]) }}">
+        <form method="POST" action="{{ route('deleteAcount', ['id'=>$user->id]) }}">
+        @csrf   
+            <input type="hidden" name="url" value="<?= url()->previous()?>">
             <div> <input type="submit" name="rejection" class="btn btn-secondary" value="Ho cambiato idea"> </div>
             <div> <input type="submit" name="accept" class="btn btn-primary" value="Si, sono sicuro"> </div>
         </form>

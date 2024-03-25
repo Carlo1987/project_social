@@ -156,11 +156,19 @@
                             </div>
                         </li>
 
+
+                      
                         <li>
                             <a href="{{ route('users.show', ['user' => Auth::user()->id])  }}">
+                            @if(Auth::user()->img == 'user_default.png')
+                                <img src="{{ asset('img/user_default.png') }}" id="avatar_profile" data-theme="{{ Themes::show(Auth::user()->id) }}" alt="User_image">
+                            @else
                                 <img src="{{ route('getAvatar', ['avatar' => Auth::user()->img]) }}" id="avatar_profile" data-theme="{{ Themes::show(Auth::user()->id) }}" alt="User_image">
+                            @endif
                             </a>
                         </li>
+                      
+
 
                         <li id="notifications" class="li_{{ Themes::show(Auth::user()->id) }}" data-theme="{{ Themes::show(Auth::user()->id) }}">
                           <a href="{{ route('friendships.index') }}">

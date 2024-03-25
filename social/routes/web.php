@@ -50,7 +50,7 @@ Route::get('/user/getAvatar/{avatar?}', 'App\Http\Controllers\UserController@get
 Route::get('user/theme', 'App\Http\Controllers\UserController@theme')->name('theme');
 Route::post('user/changeTheme', 'App\Http\Controllers\UserController@change_theme')->name('change.theme');
 Route::get('user/delete/{id}', 'App\Http\Controllers\UserController@delete')->name('user.delete');
-Route::get('user/deleteAcount/{id}', 'App\Http\Controllers\UserController@deleteAcount')->name('deleteAcount');
+Route::post('user/deleteAcount/{id}', 'App\Http\Controllers\UserController@deleteAcount')->name('deleteAcount');
 Route::post('user/search','App\Http\Controllers\UserController@search')->name('user.search');
 
 Route::get('chat', function(){

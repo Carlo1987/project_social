@@ -115,7 +115,7 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
+              <!--           <div class="row mb-3">
                             <label for="img" class="col-md-4 col-form-label text-md-end">{{ __("Scegli un'immagine") }}</label>
 
                             <div class="col-md-6">
@@ -127,7 +127,7 @@
                                 </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div>  -->
 
              
                             <div class="w-100 text-center">

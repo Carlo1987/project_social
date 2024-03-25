@@ -225,10 +225,10 @@ class UserController extends Controller
     }
 
 
-    public function deleteAcount($id)
+    public function deleteAcount($id, Request $request)
     {
         if ($id == Auth::user()->id) {
-            if (isset($_GET['accept'])) {
+            if (isset($_POST['accept'])) {
 
                 $user = User::find($id);
                 $images = Image::where('user_id', $id)->get();
@@ -318,8 +318,8 @@ class UserController extends Controller
 
                 return redirect('/');
                 
-            } elseif (isset($_GET['rejection'])) {
-                return redirect()->back();
+            } elseif (isset($_POST['rejection'])) {
+               return redirect($request->input('url'));
             }
         }
     }

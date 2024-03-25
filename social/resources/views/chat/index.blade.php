@@ -23,11 +23,13 @@
         let ip = "192.168.1.51";
         let port = "3000";
 
-        let socket = io('http://localhost:3000');  
+        let socket = io('http://127.0.0.1:3000');  
 
-       // socket.on('connection');
+      // let socket = io();
 
-        form.addEventListener("submit", (e) => {
+        socket.on('connection');
+
+        $('form').submit((e) => {
         e.preventDefault();
         if ($('#text_message').value != '') {
           socket.emit("chat", $('#text_message').value);

@@ -255,8 +255,8 @@ const container_videos = document.querySelector('#videos_responsive');
 
            localStorage.setItem('user_auth',user_id);
 
-           window.open(`http://localhost:3000/Progetto_Social-Chat?user=${user_id}&friend=${friend_id}`);
-        ///  window.open(url_complete+'chat');
+          // window.open(`http://localhost:3000/Progetto_Social-Chat?user=${user_id}&friend=${friend_id}`);
+           window.open(url_complete+'chat');
        } 
 
 

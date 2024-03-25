@@ -23,7 +23,7 @@ const io = new Server(server);
 
 
 io.on('connection', (socket) => {     
-    console.log('utente connesso');  
+    console.log('utente connesso alla chat');  
     
     socket.on('chat',(data)=>{
         io.emit('chat',data.message);
@@ -33,7 +33,7 @@ io.on('connection', (socket) => {
 });
 
 
-app.get('/Progetto_Social-Chat',(req,res)=>{
+/* app.get('/Progetto_Social-Chat',(req,res)=>{
 
     req.session.users = {
         user :  req.query.user,
@@ -50,11 +50,16 @@ app.get('/Progetto_Social-Chat',(req,res)=>{
 
      res.sendFile(`${__dirname}/client/index.html`);  
 })
+ */
 
+app.get('/',()=>{
+    console.log('Utente connesso');
+})
 
 
 const port = 3000;
 
-server.listen(port, ()=>{
+ server.listen(port, ()=>{
     console.log('Server attivo nella porta '+port);
-})
+}) 
+
