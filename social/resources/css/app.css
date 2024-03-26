@@ -722,9 +722,11 @@ main{
 
 /*     CHAT      */
 
+.offcanvasChat{
+    background-color: rgb(228, 230, 239);
+}
+
 .container_chat{
-/*     border: 2px solid rgb(23, 22, 22);
-    box-shadow: 1px 1px 2px rgb(168, 161, 161); */
     border-radius: 8px;
     width: 100%;
     min-height: 560px;
@@ -732,6 +734,7 @@ main{
     list-style: none;
     display: flex;
     flex-direction: column;
+    background-color: rgb(228, 230, 239);
 }
 
 .container_chat li {
@@ -744,17 +747,18 @@ main{
     display: flex;
     justify-content: space-between;
     box-shadow: 1px 1px 2px rgb(45, 44, 44);
+    font-size: 18px;
 }
 
 .message_friend {
     align-self: flex-start;
-    background-color: rgba(232, 231, 231, 0.949);
+    background-color: rgb(246, 241, 241);
   }
 
   .message_user {
     align-self: flex-end;
     margin-right: 40px;
-    background-color: rgb(165, 209, 167);
+    background-color: rgb(216, 246, 216);
   }
 
 .container_chat img{

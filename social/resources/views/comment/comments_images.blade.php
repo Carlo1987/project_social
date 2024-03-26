@@ -39,7 +39,7 @@
 
 @else
 
-     <div class="alert alert-secondary w-100 text-center fs-4">Nessun commento</div>
+     <div class="alert alert-secondary w-75 m-auto text-center fs-4">Nessun commento</div>
 
 @endif
 

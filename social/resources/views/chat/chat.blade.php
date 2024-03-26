@@ -6,24 +6,38 @@
         @foreach($chats as $chat)
            @if($chat->user1 == Auth::user()->id && $chat->user2 == $user->id )
            <li class="d-flex flex-column p-2 message_user"> 
-              <div class="ms-1 w-100">
-                 <img src="{{  route('getAvatar', ['avatar' => Auth::user()->img]) }}">
-                 {{ Auth::user()->nick }}
-                 {{ $chat->hour }}
+           <div class="ms-1 w-100  d-flex flex-row justify-content-between">
+                <div style="width: 80%;">
+                   <img src="{{  route('getAvatar', ['avatar' => Auth::user()->img]) }}">
+                   {{ Auth::user()->nick }}
+                </div>
+                <div style="width: 10%;">
+                   {{ $chat->hour }}
+                </div>
+               
               </div>
-              <div class="w-100">
-                {{ $chat->text }}
+              <div style="width: 100%; border-top:1px solid black; margin-top:3px;">
+                <div style="width: 90%; margin:0 auto;">
+                   {{ $chat->text }}
+                </div>
               </div>
            </li>
            @elseif($chat->user1 == $user->id && $chat->user2 == Auth::user()->id)
            <li class="d-flex flex-column p-2 message_friend"> 
-              <div class="ms-1 w-100">
-                 <img src="{{  route('getAvatar', ['avatar' => $user->img]) }}">
-                 {{ $user->nick }}
-                 {{ $chat->hour }}
+              <div class="ms-1 w-100  d-flex flex-row justify-content-between">
+                <div style="width: 80%;">
+                   <img src="{{  route('getAvatar', ['avatar' => $user->img]) }}">
+                   {{ $user->nick }}
+                </div>
+                <div style="width: 10%;">
+                   {{ $chat->hour }}
+                </div>
+               
               </div>
-              <div class="w-100">
-                {{ $chat->text }}
+              <div style="width: 100%; border-top:1px solid black; margin-top:3px;">
+                <div style="width: 90%; margin:0 auto;">
+                   {{ $chat->text }}
+                </div>
               </div>
            </li>
            @endif
@@ -35,7 +49,7 @@
 
     </ul>
 
-    <form  class="my-3 form_chat">
+    <form  class="my-3 form_chat" id="form_chat">
         <input type="hidden" class="friend_data" data-friend_id="{{ $user->id }}" data-friend_nick="{{ $user->nick }}" data-friend_img="{{ $user->img }}">
         <div class="row">
             <div class="col-md-10">
@@ -68,35 +82,34 @@
     let auth_id = input_message.getAttribute('data-auth_id');
     let friend_id = input_hidden.getAttribute('data-friend_id');
  
-
+/* 
 
     socket.emit('getMessages', {
       user1: auth_id,
       user2: friend_id
     }); 
 
-    showMessages('getMessages');
+    showMessages('getMessages'); */
 
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      let message = input_message.value;
       let current_day = `${newDate.getDay()}/${newDate.getMonth()+1}/${newDate.getFullYear()}`;
-      
 
-      if (message != '') {
+
+      if (input_message.value != '') {
 
         let data = {
           user1: auth_id,
           user2: friend_id,
-          text: message,
+          text: input_message.value,
           day: current_day,
           hour: `${setNumberCalendary(newDate.getHours())}:${setNumberCalendary(newDate.getMinutes())}`
         };
  
         socket.emit("chat", data);
-        message.innerHTML = ''; 
+       
 
       }
     });
@@ -104,61 +117,67 @@
 
     showMessages('chat');
 
+   location.href = "#form_chat";
 
-
-
- 
 
 
     function showMessages(url) {
-      socket.on(url, (messages_users) => {
-
-        let messages_list = "";
-
-       messages_users.map(data => {
+      socket.on(url, (data) => {
     
           if (auth_id == data.user1 && friend_id == data.user2 || auth_id == data.user2 && friend_id == data.user1) {
   
             let current_day = `${newDate.getDay()}/${newDate.getMonth()+1}/${newDate.getFullYear()}`;
             const url_complete = `https://${document.location.hostname}/progetti/progetto_social/social/public/index.php/`;
 
-
-            
             let li = `
             <li class="d-flex flex-column p-2 message_user"> 
-              <div class="ms-1 w-100">
-              <img src="${url_complete}user/getAvatar/${input_message.getAttribute('data-auth_img')}">
-                 ${input_message.getAttribute('data-auth_nick')}  ${data.hour}
+              <div class="ms-1 w-100  d-flex flex-row justify-content-between">
+                <div style="width: 80%;">
+                   <img src="${url_complete}user/getAvatar/${input_message.getAttribute('data-auth_img')}">
+                   ${input_message.getAttribute('data-auth_nick')}
+                </div>
+                <div style="width: 10%;">
+                ${data.hour}
+                </div> 
               </div>
-              <div class="w-100">
-                 ${data.text}
+              <div style="width: 100%; border-top:1px solid black; margin-top:3px;">
+                <div style="width: 90%; margin:0 auto;">
+                ${data.text}
+                </div>
               </div>
-            </li>`;
+           </li>
+            `;
 
 
             if (data.user1 != auth_id){
-
-            li = `
+              
+             li = `
             <li class="d-flex flex-column p-2 message_friend"> 
-              <div class="ms-1 w-100">
-              <img src="${url_complete}user/getAvatar/${input_hidden.getAttribute('data-friend_img')}">
-                 ${input_hidden.getAttribute('data-friend_nick')}  ${data.hour}
+              <div class="ms-1 w-100  d-flex flex-row justify-content-between">
+                <div style="width: 80%;">
+                   <img src="${url_complete}user/getAvatar/${input_hidden.getAttribute('data-friend_img')}">
+                   ${input_hidden.getAttribute('data-friend_nick')}
+                </div>
+                <div style="width: 10%;">
+                ${data.hour}
+                </div>
               </div>
-              <div class="w-100">
-                 ${data.text}
+              <div style="width: 100%; border-top:1px solid black; margin-top:3px;">
+                <div style="width: 90%; margin:0 auto;">
+                ${data.text}
+                </div>
               </div>
-            </li>`;
+           </li>
+            `;
 
             }          
 
-            messages_list += li;
+           messages.insertAdjacentHTML('beforeend',li);
+           location.href = "#form_chat";
           }
         })
 
-        messages.innerHTML = messages_list;
-        window.scrollTo(0, document.body.scrollHeight);
 
-      })
     }
 
 

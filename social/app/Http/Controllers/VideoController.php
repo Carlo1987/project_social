@@ -30,7 +30,6 @@ class VideoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'video' => 'mimes:mp4,mov,ogg',
             'description' => 'string',
         ]);
 

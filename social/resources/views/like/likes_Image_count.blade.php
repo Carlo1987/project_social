@@ -1,9 +1,9 @@
 <div class="likes_count">
         (<span class="count">{{ count($image->likes) }}</span>)
-
-        <ul>
+        
         @if(count($image->likes) != 0)
-     
+        <ul>
+
             @foreach($image->likes as $like)
             <li class="likes_users" data-imageID="{{ $image->id }}">
                 <div>

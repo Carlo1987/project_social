@@ -1,8 +1,9 @@
 <div class="likes_count">
     (<span class="count">{{ count($video->likes) }}</span>)
 
-    <ul>
     @if(count($video->likes) != 0)
+    <ul>
+ 
        @foreach($video->likes as $like)
        <li class="likes_users" data-videoID="{{ $video->id }}">
            <div>

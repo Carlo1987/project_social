@@ -23,12 +23,12 @@ const io = require('socket.io')(server, {
 
 
 
- let messages = [];
+ //let messages = [];
 
 
 io.on('connection', (socket) => {    
     
-    socket.on('getMessages', (data)=>{
+   /*  socket.on('getMessages', (data)=>{
         executeQuery(`SELECT * FROM chats WHERE user1='${data.user1}' AND user2='${data.user2}' OR user1='${data.user2}' AND user2='${data.user1}'`, function(error,result){
             if(error){
                 console.log(error);
@@ -39,7 +39,7 @@ io.on('connection', (socket) => {
             }
          
         })
-    }) 
+    })  */
     
    
     
@@ -48,7 +48,7 @@ io.on('connection', (socket) => {
             if(error){
                 console.log(error);
             }else{
-                messages.push(data);
+            //  let messages = executeQuery(`SELECT * FROM chats WHERE user1='${data.user1}' AND user2='${data.user2}' OR user1='${data.user2}' AND user2='${data.user1}'`);
                 io.emit('chat',data);
                 console.log(`Inviato da ${data.user1} a ${data.user2} messaggio : ${data.text}`);
             }
