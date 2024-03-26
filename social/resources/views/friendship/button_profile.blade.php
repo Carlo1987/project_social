@@ -50,6 +50,7 @@
 
 @else                           <!--   PROFILO ALTRI UTENTI    -->
 
+
 <!-- se il seguente utente ha ricevuto una richiesta di amicizia dall'utente loggato...   -->
 @if( Friendships::checkFriendship( $friendships , $user->id) != false &&  Friendships::checkFriendship( $friendships , $user->id) == 'accettata') 
 <!-- se la richiesta è stata accettata.... -->

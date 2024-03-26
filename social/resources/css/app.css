@@ -159,6 +159,7 @@ button{
     width: 60px;
     height: 55px;
     border-radius: 50px;
+    background-color: rgb(165, 209, 167);
 }
 
 .content_search a{
@@ -715,5 +716,61 @@ main{
     float: none;
     clear: both;
 } 
+
+
+
+
+/*     CHAT      */
+
+.container_chat{
+/*     border: 2px solid rgb(23, 22, 22);
+    box-shadow: 1px 1px 2px rgb(168, 161, 161); */
+    border-radius: 8px;
+    width: 100%;
+    min-height: 560px;
+    background-color: white;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.container_chat li {
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 85%;
+    padding: 5px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 1px 1px 2px rgb(45, 44, 44);
+}
+
+.message_friend {
+    align-self: flex-start;
+    background-color: rgba(232, 231, 231, 0.949);
+  }
+
+  .message_user {
+    align-self: flex-end;
+    margin-right: 40px;
+    background-color: rgb(165, 209, 167);
+  }
+
+.container_chat img{
+    width: 40px;
+    height: 40px;
+    border-radius: 900px;
+    border: 1px solid black;
+}
+
+
+
+ .form_chat input[type="text"]{
+    height: 40px;
+    font-size: 23px;
+    border-radius: 15px;
+    padding-left: 10px;
+}
 
 

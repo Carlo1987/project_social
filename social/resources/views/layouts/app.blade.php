@@ -17,6 +17,8 @@
 
     <script src="https://kit.fontawesome.com/b476d70dd7.js" crossorigin="anonymous"></script>
 
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO" crossorigin="anonymous"></script>
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/js/main.js', 'resources/sass/_variables.scss',  'resources/css/app.css', 'resources/css/themes.css', 'resources/css/mediaQuery.css'])    
 </head>

@@ -10,6 +10,7 @@ use App\Models\Like;
 use App\Models\Comment;
 use App\Models\Friendship;
 use App\Models\Friendlist;
+use App\Models\Chat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;   //   aggiunto per usare Auth (utente identificato)
 use Illuminate\Support\Facades\Hash;   //  aggiunto per usare hash per password
@@ -72,6 +73,7 @@ class UserController extends Controller
         $friendships = Friendship::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->get();         //  richieste fatte dall'utente (in sospeso e accettate)
         $friend_requests = Friendship::where('friend_id', Auth::user()->id)->orderBy('id', 'desc')->get();      //  richieste ricevute da altri utenti (in sospeso e accettate)
         $friendlists = Friendlist::where('user_id', $user->id)->orWhere('friend_id', $user->id)->get();   //  lista amici
+        $chat = Chat::where('user1',Auth::user()->id)->where('user2',$user->id)->orWhere('user1',$user->id)->where('user2',Auth::user()->id)->get();     //   chat
 
         return view('user.profile', [
             'images' => $images,
@@ -81,6 +83,7 @@ class UserController extends Controller
             'friendships' => $friendships,
             'friend_requests' => $friend_requests,
             'friendlists' => $friendlists,
+            'chats' => $chat,
             'user' => $user
         ]);
     }
