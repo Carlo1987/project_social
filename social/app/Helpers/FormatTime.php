@@ -57,4 +57,19 @@ class FormatTime
             }
         }
     }
+
+
+
+
+    public static function setDay($date)
+    {
+        $dateSplit = explode('/', $date);
+
+        $mounths = ['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
+
+        return $dateSplit[0].' '.$mounths[(int)$dateSplit[1]-1].' '.$dateSplit[2];
+    }
+
+
+
 }

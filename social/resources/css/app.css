@@ -722,7 +722,11 @@ main{
 
 /*     CHAT      */
 
-.offcanvasChat{
+#offcanvasChat{
+    width: 60%;
+}
+
+.bodyChat{
     background-color: rgb(228, 230, 239);
 }
 
@@ -735,6 +739,18 @@ main{
     display: flex;
     flex-direction: column;
     background-color: rgb(228, 230, 239);
+}
+
+.day_chat{
+    width: auto;
+    padding: 10px;
+    margin: 0 auto;
+    background-color: rgb(228, 230, 239);
+    border: 1px solid black;
+    box-shadow: 1px 1px 2px rgb(45, 44, 44);
+    border-radius: 15px;
+    text-align: center;
+    font-size: 19px;
 }
 
 .container_chat li {
@@ -761,11 +777,33 @@ main{
     background-color: rgb(216, 246, 216);
   }
 
+  .user_chat{
+    width: 65%;
+  }
+
+  .hour_chat{
+    width: 20%;
+  }
+
 .container_chat img{
     width: 40px;
     height: 40px;
     border-radius: 900px;
     border: 1px solid black;
+}
+
+.delete_chat{
+    font-size: 22px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+
+.delete_chat:hover{
+    border: 1px solid rgb(97, 89, 89);
+    background-color: rgb(205, 238, 205);
+    box-shadow: 1px 1px 2px rgb(45, 44, 44);
+    border-radius: 7px;
 }
 
 

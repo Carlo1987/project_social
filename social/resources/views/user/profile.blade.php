@@ -120,12 +120,12 @@
 
         <!-- contenuto chat -->
 
-        <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasChat" aria-labelledby="offcanvasScrollingChat" style="width: 60%;">
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasChat" aria-labelledby="offcanvasScrollingChat">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title w-100 text-center text-primary fs-3" id="offcanvasScrollingChat">   <i class="fa fa-facebook-square" aria-hidden="true"></i>   Chat con {{ $user->name }}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            <div class="offcanvas-body offcanvasChat">
+            <div class="offcanvas-body bodyChat">
                  @include('chat.chat')
             </div>
         </div>

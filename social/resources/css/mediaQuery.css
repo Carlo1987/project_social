@@ -15,6 +15,11 @@
 
 
 
+@media (max-width:1070px){
+    #offcanvasChat{
+        width: 90%;
+    }
+}
 
 
 
@@ -36,10 +41,6 @@
     main{
         margin-top: 110px;
     }
-
-/*     .content_files img{
-        max-height: 300px !important;
-    } */
 
     .container_avatar{
         width: 98%;
@@ -98,4 +99,12 @@
      .content_details{
         width: 85%;
      }
+}
+
+
+
+@media (max-width:610px){
+    .hour_chat{
+        width: 30%;
+      }
 }
