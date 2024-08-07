@@ -15,7 +15,7 @@
                         </div>
                     @endif
 
-                   <p class="fs-4 lang" data-section="welcome" data-article="thanks"> Buona navigazione nella mia simulazione Social !!  </p> 
+                   <p class="fs-4 lang" data-section="welcome" data-article="thanks"> Divertiti nel mio Progetto Social !!  </p> 
 
                     <div>
                         <a href="{{ route('users.index') }}" class="lang" data-section="welcome" data-article="link">Entra nella HOME</a>

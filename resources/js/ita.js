@@ -61,7 +61,7 @@ export const ita = {
 
     welcome : {
         success : "Login effettuato",
-        thanks : "Buona navigazione nella mia simulazione Social !!",
+        thanks : "Divertiti nel mio Progetto Social !!",
         link : "Entra nella HOME!"
     },
 

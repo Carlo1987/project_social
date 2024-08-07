@@ -34,7 +34,7 @@
          <nav class="navbar navbar-expand-lg navbarProfile d-flex flex-row  rounded-4 m-auto position-relative">
 
             <ul class="navbar-nav buttonProfile me-auto  d-flex flex-row justify-content-start">
-               <div class="navbar-item" >
+               <div class="navbar-item" style="width: 160px;">
                   @include('friendship.button_profile')
                </div>
             </ul>

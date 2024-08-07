@@ -63,7 +63,7 @@ export const esp = {
 
     welcome : {
         success : "Login relizado",
-        thanks : "Buena navegacion en mi simulador Social !!",
+        thanks : "Disfruta mi Projecto Social !!",
         link : "Entras en la HOME!"
     },
 

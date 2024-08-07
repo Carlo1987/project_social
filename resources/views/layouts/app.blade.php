@@ -151,7 +151,7 @@
 
                                             <div class="menu_acount dropdown-menu dropdown-menu-end div_{{ Themes::show() }} position-absolute" aria-labelledby="navbarDropdown">
 
-                                             <!--  -->
+                                             <!--  "if" menu utenti veri gestito tramite JS  -->
 
                                                 <a class="dropdown-item menu_hidden lang" href="{{ route('editDatos') }}" data-section="nav" data-article="update_datas" data-user="{{ Auth::user()->id }}">
                                                     Modifica dati Acount
@@ -188,7 +188,7 @@
                                                     Cambia tema
                                                 </a>
 
-                                               <!--  -->
+                                               <!-- fine "if" -->
 
 
                                                 <a class="dropdown-item logout_{{ Themes::show() }}" href="{{ route('logout') }}" onclick="event.preventDefault();

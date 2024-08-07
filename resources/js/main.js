@@ -382,36 +382,8 @@ const container_images = document.querySelector('.content_images');
 const container_videos = document.querySelector('.content_videos');
 
 
-const mqLarge = window.matchMedia( '(min-width: 993px)' ); 
-mqLarge.addEventListener('change', mqHandler);
 
-
-function responsiveFiles(display , display_images , display_arrow){
-    const titles = document.querySelectorAll('.titles');
-    titles.forEach(title=>{
-        title.style.display = display;
-        title.style.marginBottom = "18px";
-    })
-    container_videos.style.display = display;
-    container_images.style.display = display_images;
-
-    if(window.location.href.indexOf('users') > -1){
-          arrow_files.style.display = display_arrow;
-    }
-}
-
-
-function mqHandler(e) {
-    if(e.matches){
-        responsiveFiles('block','block','none');
-    }else{
-        responsiveFiles('none','block','block');
-    }
-}
-
-mqHandler(mqLarge);
-
-    button_video.onclick = function(){
+button_video.onclick = function(){
 
     container_videos.style.display = "block";
     container_images.style.display = "none";
@@ -448,18 +420,18 @@ mqHandler(mqLarge);
         tl.to('.nav_responsive',{                                         
             y : translateY,
             opacity : 1                                                    
-       },'-=0.6');
+       },'-=0.6');      
     }
 
     let move_animation = false;
 
     arrow_files.onclick = function(){
         if(!move_animation){
-          animation_responsive(180,70);
+          animation_responsive(180,75);
           move_animation = true;
         
         }else{
-           animation_responsive(0,-10);
+           animation_responsive(0,-80);
            move_animation = false;
         }
     }
@@ -467,21 +439,62 @@ mqHandler(mqLarge);
 
 
 
+
+const mqLarge = window.matchMedia( '(min-width: 993px)' ); 
+mqLarge.addEventListener('change', mqHandler);
+
+
+function responsiveFiles(display , display_images , display_arrow){
+    const titles = document.querySelectorAll('.titles');
+    titles.forEach(title=>{
+        title.style.display = display;
+        title.style.marginBottom = "18px";
+    })
+    container_videos.style.display = display;
+    container_images.style.display = display_images;
+
+    if(window.location.href.indexOf('users') > -1){
+          arrow_files.style.display = display_arrow;
+    }
+}
+
+
+function mqHandler(e) {
+    if(e.matches){
+        responsiveFiles('block','block','none');
+        if(move_animation){            
+            animation_responsive(0,-80);
+            move_animation = false;
+        }
+        
+    }else{
+        responsiveFiles('none','block','block');
+    }
+}
+
+mqHandler(mqLarge);
+
+
+
+
+
   //////////////       NASCONDERE MENU UTENTI FITTIZZI     /////////////////////////   
 
 
-    const menu_hidden = document.querySelectorAll('.menu_hidden');
+     let menu_hidden = document.querySelectorAll('.menu_hidden');
   
     menu_hidden.forEach(element=>{
         let id = element.getAttribute('data-user');
-        if(id != 1 || id <= 18){
-            element.style.display = 'none';
-        }else{
+        id = parseInt(id);
+              
+        if(id == 1 || id > 19){
             element.style.display = 'block';
+        }else{
+            element.style.display = 'none';
         }
         
     })
-
+ 
 
 
 
