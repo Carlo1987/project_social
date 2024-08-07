@@ -199,6 +199,10 @@
    .message_user{
     margin-right: 0px;
    }
+
+    .file_index{
+     height: 250px;  
+   } 
  
 }
 

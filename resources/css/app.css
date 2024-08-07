@@ -520,6 +520,14 @@ main{
     padding-left: 5px;
 }
 
+.file_index{
+    width: 100%;
+    height: 350px;  
+}
+
+.file_index img,
+.file_index video{ width: 100%; height: 100%; }
+
 
 
 

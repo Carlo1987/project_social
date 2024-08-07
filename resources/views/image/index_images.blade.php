@@ -16,8 +16,8 @@
 
      </div>
 
-      <a href="{{ route('image.detail', ['id' => $image->id]) }}" class="w-100"> 
-         <img src="{{ route('images.show',  ['image' => $image->id]) }}" alt="image_user{{ Auth::user()->nick }}" class="w-100" style="height: 350px;">
+      <a href="{{ route('image.detail', ['id' => $image->id]) }}" class="file_index"> 
+         <img src="{{ route('images.show',  ['image' => $image->id]) }}" alt="image_user{{ Auth::user()->nick }}">
       </a> 
 
      <div class="card-body mb-2 border-bottom border-dark">

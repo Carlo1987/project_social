@@ -16,8 +16,8 @@
 
     </div>
 
-    <a href="{{ route('video.detail', ['id' => $video->id]) }}">
-        <video class="video" style="width:100%; height: 350px;" controls>
+    <a href="{{ route('video.detail', ['id' => $video->id]) }}" class="file_index">
+        <video class="video" controls>
             <source src="{{ route('videos.show', ['video'=> $video->id]) }}">
         </video>
     </a>
