@@ -62,10 +62,6 @@ Route::get('user/delete/{id}', 'App\Http\Controllers\UserController@delete')->na
 Route::post('user/deleteAcount/{id}', 'App\Http\Controllers\UserController@deleteAcount')->name('deleteAcount');
 Route::post('user/search','App\Http\Controllers\UserController@search')->name('user.search');
 
-Route::get('chat', function(){
-       return view('chat.index');
-});
-
 //////////////   rotte per verifica Acount e reset password  utente   /////////////////////////
 
 Route::get('forgot-password','App\Http\Controllers\password\ResetPasswordController@show')->middleware('guest')->name('password.request');

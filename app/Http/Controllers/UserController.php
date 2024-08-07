@@ -77,7 +77,7 @@ class UserController extends Controller
         $friend_requests = Friendship::where('friend_id', Auth::user()->id)->orderBy('id', 'desc')->get();      //  richieste ricevute da altri utenti (in sospeso e accettate)
         $friendlists = Friendlist::where('user_id', $user->id)->orWhere('friend_id', $user->id)->get();   //  lista amici
         $chat = Chat::where('user1',Auth::user()->id)->where('user2',$user->id)->orWhere('user1',$user->id)->where('user2',Auth::user()->id)->get();     //   chat
-        $days_chat = DB::select('select day from chats WHERE user1='.Auth::user()->id.' AND user2='.$user->id.' OR user1='.$user->id.' AND user2='.Auth::user()->id.'  group by day');
+        $days_chat = DB::select('select day from chats WHERE user1='.Auth::user()->id.' AND user2='.$user->id.' OR user1='.$user->id.' AND user2='.Auth::user()->id.'  group by day order by id');
 
         return view('user.profile', [
             'images' => $images,
@@ -360,7 +360,10 @@ class UserController extends Controller
                
                 $user->delete();    //  elimina l'utente
 
-                return redirect('/');
+                $cookie = new CookieController();
+                $cookie_deleted = $cookie->deleteCookie();
+
+                return redirect('/')->cookie($cookie_deleted);
                 
             }
         } 

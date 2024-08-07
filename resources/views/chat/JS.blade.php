@@ -48,7 +48,6 @@
         location.href = "#form_chat";    
     
 
-
         function deleteChats(id){
 
           let li = document.querySelectorAll('.message');
@@ -81,7 +80,6 @@
             let messages_data = response.messages;
     
             let messages_list = "";
-    
     
             days.map(day=>{
     
