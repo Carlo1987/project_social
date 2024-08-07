@@ -114,7 +114,7 @@ export const esp = {
         friends : "Amigos",
         private : "Este Usuario tiene un perfil privado, pides su amistad si quires ver su contenido",
         images : "Imagenes",
-        questions : "solicitudes pendientes",
+        questions : "solicitudes en espera",
         delete_friendship : "Esperando respuesta",
         answer_friendship : "Respondes a la solicitud",
         friendship_to : "Solicitud por",

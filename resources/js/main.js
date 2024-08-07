@@ -1,11 +1,11 @@
 import { ita } from "./ita";
 import { esp } from "./esp";
 
-/* let host = "localhost"; 
-let project_name = "progetti/progetto_social/social/public";   */
+ let host = "localhost"; 
+let project_name = "progetti/progetto_social/social/public";   
 
-let host = "carloloidev.com"; 
-let project_name = "Project_Social/public";  
+/* let host = "carloloidev.com"; 
+let project_name = "Project_Social/public";   */
  
 
 const url = `https://${host}/${project_name}/`;
@@ -69,10 +69,8 @@ window.addEventListener("load", function () {
         let data_language = input.getAttribute('data-language');
 
         if(data_language == 'esp'){
-           // setFlag(esp);
             language = esp; 
         }else if(data_language == 'ita'){
-           // setFlag(ita);
             language = ita; 
         }
 
@@ -414,6 +412,7 @@ function mqHandler(e) {
 mqHandler(mqLarge);
 
     button_video.onclick = function(){
+
     container_videos.style.display = "block";
     container_images.style.display = "none";
     button_video.style.textDecoration = "underline";
@@ -447,7 +446,8 @@ mqHandler(mqLarge);
        },'-=0.6');
 
         tl.to('.nav_responsive',{                                         
-            y : translateY                                                    
+            y : translateY,
+            opacity : 1                                                    
        },'-=0.6');
     }
 
@@ -466,17 +466,42 @@ mqHandler(mqLarge);
 
 
 
+
+  //////////////       NASCONDERE MENU UTENTI FITTIZZI     /////////////////////////   
+
+
+    const menu_hidden = document.querySelectorAll('.menu_hidden');
+  
+    menu_hidden.forEach(element=>{
+        let id = element.getAttribute('data-user');
+        if(id != 1 || id <= 18){
+            element.style.display = 'none';
+        }else{
+            element.style.display = 'block';
+        }
+        
+    })
+
+
+
+
      //////////////       COLLEGAMENTO RISPOSTA AMICIZIA    /////////////////////////   
 
 
      if(window.location.href.indexOf('users') > -1){
 
         let answer = document.querySelector('.answer_friend');
-
+  
         answer.onclick = function(){
             window.location.href = `${url_complete}friendships`;
         }
     }
+
+
+
+
+
+    
 
 
 

@@ -34,7 +34,7 @@
 
     <div id="app">
         <nav class="nav_{{ Themes::show() }} navbar navbar-expand-lg navbar-light shadow-sm fixed-top">
-            <div class="container">   <!--  d-flex flex-row justify-content-between -->
+            <div class="container">   
                 <a class="home_{{ Themes::show() }} navbar-brand fw-bold fs-2" style="font-size: 23px; letter-spacing: 1px; font-family: sans-serif; position: relative;" href="{{ route('users.index') }}" id="home" data-theme="{{ Themes::show(Auth::user()->id) }}">
                     <i class="fa fa-facebook-square" aria-hidden="true"></i> Social
                 </a>
@@ -92,12 +92,11 @@
 
                                 @else      <!-- se si è loggati -->
 
-
-                
-                                   <div class="arrow_files arrow_files_{{ Themes::show() }}">  
-                                       <i class="fa-solid fa-arrow-down fa-xl  arrow_image "></i>
-                                    </div>                       
-
+                            
+                                <div class="arrow_files arrow_files_{{ Themes::show() }}">  
+                                    <i class="fa-solid fa-arrow-down fa-xl  arrow_image "></i>
+                                </div>                       
+                          
 
 
 
@@ -152,23 +151,22 @@
 
                                             <div class="menu_acount dropdown-menu dropdown-menu-end div_{{ Themes::show() }} position-absolute" aria-labelledby="navbarDropdown">
 
+                                             <!--  -->
 
-                                                @if(Auth::user()->id == 1 || Auth::user()->id > 19)
-
-                                                <a class="dropdown-item lang" href="{{ route('editDatos') }}" data-section="nav" data-article="update_datas">
+                                                <a class="dropdown-item menu_hidden lang" href="{{ route('editDatos') }}" data-section="nav" data-article="update_datas" data-user="{{ Auth::user()->id }}">
                                                     Modifica dati Acount
                                                 </a>
 
-                                                <a class="dropdown-item lang" href="{{ route('avatar') }}" data-section="nav" data-article="update_image">
+                                                <a class="dropdown-item menu_hidden lang" href="{{ route('avatar') }}" data-section="nav" data-article="update_image" data-user="{{ Auth::user()->id }}">
                                                     Cambia immagine di profilo
                                                 </a>
 
-                                                <a class="dropdown-item lang" href="{{ route('editPassword') }}" data-section="nav" data-article="update_password">
+                                                <a class="dropdown-item menu_hidden lang" href="{{ route('editPassword') }}" data-section="nav" data-article="update_password" data-user="{{ Auth::user()->id }}">
                                                     Modifica password
                                                 </a>
 
 
-                                                <a class="dropdown-item position-relative lang" href="#" data-section="nav" data-article="files" id="upload_files">
+                                                <a class="dropdown-item menu_hidden position-relative lang" href="#" data-section="nav" data-article="files" id="upload_files" data-user="{{ Auth::user()->id }}">
                                                     Carica files
                                                 </a>
 
@@ -186,11 +184,12 @@
                                                 </div>
 
 
-                                                <a class="dropdown-item lang" href="{{ route('theme') }}" data-section="nav" data-article="update_theme">
+                                                <a class="dropdown-item menu_hidden lang" href="{{ route('theme') }}" data-section="nav" data-article="update_theme" data-user="{{ Auth::user()->id }}">
                                                     Cambia tema
                                                 </a>
 
-                                                @endif
+                                               <!--  -->
+
 
                                                 <a class="dropdown-item logout_{{ Themes::show() }}" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                    document.getElementById('logout-form').submit();">
