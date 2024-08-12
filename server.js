@@ -4,18 +4,10 @@ const app = express();
 const executeQuery = require('./database');
 
 
-const session = require('express-session');
-
-app.use(session({
-    secret : "Ilbacala",
-    resave : false,
-    saveUninitialized : false
-}));
-
-
 
 const http = require('http');
-const server = http.createServer(app);
+const server = http.createServer(app); 
+
 
 const io = require('socket.io')(server, {
     cors: {origin : "*"}
@@ -24,10 +16,16 @@ const io = require('socket.io')(server, {
 
 
 
-io.on('connection', (socket) => {      
+io.on('connection', (socket) => {   
+    
+    
+    socket.on('show_messages',(data)=>{
+        showMessages(data,'show_messages');
+    }) 
+
     
     socket.on('chat',(data)=>{
-        executeQuery(`INSERT INTO chats VALUES(null,'${data.user1}','${data.user2}','${data.text}','${data.day}','${data.hour}')`, function(error){
+        executeQuery(`INSERT INTO chats VALUES(null,'${data.user1}','${data.user2}','${data.text}','${data.day}','${data.hour}' , false)`, function(error){
             if(error){
                 console.log(error);
             }else{
@@ -48,17 +46,30 @@ io.on('connection', (socket) => {
             }
         })
     })
+
+
+
+    socket.on('update_views',(data)=>{
+         executeQuery(`UPDATE chats SET view=true WHERE user2=${data.user1} AND user1=${data.user2} AND view=false`, function(error,result){
+            if(error){
+                console.log(error);
+            }else{
+               console.log(`messages updates : ${result.changedRows}`);               
+            }
+         })
+        
+    })
    
 });
 
 
 
 function showMessages(data,url){
-    executeQuery(`select day from chats WHERE user1=${data.user1} AND user2=${data.user2} OR user1=${data.user2} AND user2=${data.user1}  group by day`, function(error,days){
+    executeQuery(`SELECT day FROM chats WHERE user1=${data.user1} AND user2=${data.user2} OR user1=${data.user2} AND user2=${data.user1}  group by day order by id`, function(error,days){
         if(error){
             console.log(error);
         }else{
-            executeQuery(`SELECT * FROM chats WHERE user1='${data.user1}' AND user2='${data.user2}' OR user1='${data.user2}' AND user2='${data.user1}'`, function(error,result){
+            executeQuery(`SELECT * FROM chats WHERE user1='${data.user1}' AND user2='${data.user2}' OR user1='${data.user2}' AND user2='${data.user1}' order by id`, function(error,result){
                 if(error){
                     console.log(error);
                 }else{
