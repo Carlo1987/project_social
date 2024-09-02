@@ -1,0 +1,73 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    text-align: center;
+    color: rgb(185, 59, 59);
+    font-size: 42px;
+}
+
+section{
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+#section_fake{
+    height: 355px;
+}
+
+#section_users{
+    height: 49%;
+}
+
+.yellow,
+.green{
+    float: left;
+    width: 10%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.yellow{   
+    background-color: yellow;
+}
+
+.green{
+    background-color: green;
+}
+
+.content{
+    float: right;
+    width: 87%;
+    height: 100%;
+    padding-right: 5px;
+    padding-left: 5px;
+    border-radius: 5px;
+}
+
+.clearfix{
+    clear: both;
+}
+
+h2{
+    text-align: center;
+}
+
+p{
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+table{
+    width: 100%;
+}
+
+.blue{
+    color: blue;
+}
+
+.red{
+    color: red;
+}

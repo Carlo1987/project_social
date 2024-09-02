@@ -1,0 +1,57 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-027e4a0f.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/css/mediaQuery.css": {
+    "file": "assets/mediaQuery-b3371f7d.css",
+    "isEntry": true,
+    "src": "resources/css/mediaQuery.css"
+  },
+  "resources/css/themes.css": {
+    "file": "assets/themes-5216b453.css",
+    "isEntry": true,
+    "src": "resources/css/themes.css"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-c1416cad.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  },
+  "resources/js/chat.js": {
+    "file": "assets/chat-4ed993c7.js",
+    "isEntry": true,
+    "src": "resources/js/chat.js"
+  },
+  "resources/js/esp.js": {
+    "file": "assets/esp-4ed993c7.js",
+    "isEntry": true,
+    "src": "resources/js/esp.js"
+  },
+  "resources/js/ita.js": {
+    "file": "assets/ita-4ed993c7.js",
+    "isEntry": true,
+    "src": "resources/js/ita.js"
+  },
+  "resources/js/main.js": {
+    "file": "assets/main-d361dc5e.js",
+    "isEntry": true,
+    "src": "resources/js/main.js"
+  },
+  "resources/js/servers.js": {
+    "file": "assets/servers-4ed993c7.js",
+    "isEntry": true,
+    "src": "resources/js/servers.js"
+  },
+  "resources/sass/_variables.scss": {
+    "file": "assets/_variables-4ed993c7.js",
+    "isEntry": true,
+    "src": "resources/sass/_variables.scss"
+  },
+  "resources/sass/app.scss": {
+    "file": "assets/app-bc305a8b.css",
+    "isEntry": true,
+    "src": "resources/sass/app.scss"
+  }
+}

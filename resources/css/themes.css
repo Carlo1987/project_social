@@ -1,0 +1,400 @@
+/*   /////////////////    DEFAULT   /////////////////////    */
+
+.bg_default{
+    background-color: rgba(232, 231, 231, 0.949);
+}
+
+
+.nav_default{
+    background-color: white;
+}
+
+.home_default{
+    color:  #0d6efd;
+}
+
+.home_default:hover{
+    color:  #0d6efd;
+}
+
+.titles_default{
+    color: white;
+    background-color: #0d6efd;
+}
+
+.titles_default:hover{
+    color: white;
+    background-color: rgba(34, 116, 239, 0.974);
+}
+
+.search_default{
+    background-color: rgba(232, 231, 231, 0.949);
+    border: 1px solid rgb(200, 193, 193);
+}
+
+.li_default a{
+    color: black;
+}
+
+.li_default a i{
+    color: black;
+}
+
+.div_default{
+    background-color: rgba(232, 231, 231, 0.949);
+    border: 1px solid rgb(200, 193, 193);
+    border-radius: 10px;
+}
+
+.notification_default{
+    color:white;
+}
+
+.logout_default{
+    color:  #0d6efd !important;
+}
+
+.destroy_default{
+    color: red !important;
+}
+
+.default{
+    background-color: rgb(253, 244, 244);
+    box-shadow: 1px 2px 8px rgb(160, 153, 153);
+}
+
+.comment_default{
+    background-color:  rgba(232, 231, 231, 0.949);
+}
+
+.edit_default{
+    background-color: #0d6efd;
+    color: white;
+}
+
+.form_default button{
+    background-color: #0d6efd;
+    color: white;
+}
+
+.form_default button:hover{
+    background-color: #0d6efd;
+    color: white;
+}
+
+
+.image_hover_default:hover{
+    border: 2px solid black;
+    scale: 1.2;
+}
+
+.arrow_files_default{
+    background-color: #0d6efd;
+    color: white;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    box-shadow: 1px 1px 2px rgb(74, 74, 74);
+}
+
+/*   /////////////////    SCURO   /////////////////////    */
+
+.bg_opaque{
+    background-color: rgba(245, 239, 239, 0.949);
+}
+
+
+.nav_opaque{
+    background-color: rgba(237, 225, 225, 0.949);
+}
+
+.home_opaque{
+    color:  #0d6efd;
+}
+
+.home_opaque:hover{
+    color:  #0d6efd;
+}
+
+.titles_opaque{
+    color: white;
+    background-color: #0d6efd;
+}
+
+.titles_opaque:hover{
+    color: white;
+    background-color: rgba(34, 116, 239, 0.974);
+}
+
+.search_opaque{
+    background-color: rgba(210, 197, 197, 0.949);
+    border: 1px solid rgb(200, 193, 193);
+}
+
+.li_opaque a{
+    color: black;
+}
+
+.li_opaque a i{
+    color: black;
+}
+
+.div_opaque{
+    background-color: rgba(232, 231, 231, 0.949);
+    border: 1px solid rgb(200, 193, 193);
+    border-radius: 10px;
+}
+
+.notification_opaque{
+    color:white;
+}
+
+.logout_opaque{
+    color:  #0d6efd !important;
+}
+
+.destroy_opaque{
+    color: red !important;
+}
+
+.opaque{
+    background-color: rgb(223, 211, 211);
+    box-shadow: 1px 2px 8px rgb(160, 153, 153);
+}
+
+.comment_opaque{
+    background-color:  rgba(232, 231, 231, 0.949);
+}
+
+.edit_opaque{
+    background-color: #0d6efd;
+    color: white;
+}
+
+.form_opaque button{
+    background-color: #0d6efd;
+}
+
+.form_opaque button:hover{
+    background-color: #0d6efd;
+}
+
+.image_hover_opaque:hover{
+    border: 2px solid black;
+    scale: 1.2;
+}
+
+.arrow_files_opaque{
+    border: 1px solid black;
+    box-shadow: 1px 1px 2px rgb(74, 74, 74);
+}
+
+
+/*  /////////////////     NERO  /////////////////////////    */
+
+.bg_black{
+    background-color: rgba(232, 231, 231, 0.949);
+}
+
+.nav_black{
+    background-color:   rgb(49, 44, 44);
+    color: rgb(223, 212, 212);
+}
+
+.home_black{
+    color:  white;
+}
+
+.home_black:hover{
+    color:  white;
+}
+
+.titles_black{
+    color: white;
+    background-color:   rgb(49, 44, 44);
+}
+
+.titles_black:hover{
+    color: white;
+    background-color:   rgb(74, 67, 67);
+}
+
+.search_black{
+    background-color:rgb(223, 212, 212);
+    box-shadow: 1px 2px 8px white; 
+}
+
+.li_black:hover{
+    background-color: transparent;
+}
+
+.li_black a,
+.li_black a i{
+    color: white;
+}
+
+
+.li_black a:hover,
+.li_black:active a,
+.li_black:visited a{
+    color: white !important;
+    background-color: transparent !important;
+}
+
+.a_black{
+    color:rgb(223, 212, 212) !important;
+}
+
+
+
+.div_black,
+.edit_black{
+    background-color:  rgb(49, 44, 44) !important;
+    border-radius: 10px;
+    color: white !important;
+}
+
+.div_black a:hover{
+    color: rgb(49, 44, 44);
+}
+
+.notification_black{
+    color:black !important;
+}
+
+.logout_black{
+    color:  #0d6efd !important;
+}
+
+.destroy_black{
+    color: red !important;
+}
+
+.black{
+    background-color: rgb(253, 244, 244);
+    box-shadow: 1px 2px 8px rgb(160, 153, 153);
+}
+
+.comment_black{
+    background-color:  rgba(232, 231, 231, 0.949);
+}
+
+
+
+.form_black button{
+    background-color: #0d6efd;
+    color: white;
+}
+
+.form_black button:hover{
+    background-color: #0d6efd;
+    color: white;
+}
+
+.image_hover_black:hover{
+    border: 2px solid white !important;
+    box-shadow: 1px 1px 2px rgb(206, 204, 204);
+    scale: 1.2;
+}
+
+.arrow_files_black{
+    border: 1px solid white;
+    box-shadow: 1px 1px 2px rgb(206, 204, 204);
+}
+
+
+/*   /////////////////    AZZURRO   /////////////////////    */
+
+.bg_blue{
+    background-color: rgba(229, 218, 228, 0.949);
+}
+
+
+.nav_blue{
+    background-color: rgb(144, 171, 222);
+}
+
+.home_blue{
+    color:  rgb(35, 32, 32);
+}
+
+.home_blue:hover{
+    color:  rgb(35, 32, 32);
+}
+
+.titles_blue{
+    color: white;
+   background-color:  rgb(144, 171, 222);
+}
+
+.titles_blue:hover{
+    color: white;
+    background-color: rgba(101, 144, 209, 0.974);
+}
+
+.search_blue{
+    background-color: rgba(225, 215, 215, 0.949);
+    border: 1px solid rgb(200, 193, 193);
+}
+
+.li_blue a{
+    color: black;
+}
+
+.li_blue a i{
+    color: black;
+}
+
+.div_blue{
+    background-color: rgb(144, 171, 222);
+    border: 1px solid  rgb(125, 143, 177);
+    border-radius: 10px;
+}
+
+.notification_blue{
+    color:white;
+}
+
+.logout_blue{
+    color:  #0d6efd !important;
+}
+
+.destroy_blue{
+    color: red !important;
+}
+
+.blue{
+    background-color: rgb(253, 244, 244);
+    box-shadow: 1px 2px 8px rgb(160, 153, 153);
+}
+
+.comment_blue{
+    background-color:  rgba(232, 231, 231, 0.949);
+}
+
+.edit_blue{
+    background-color: rgb(144, 171, 222) !important;
+    color: white;
+}
+
+.form_blue button{
+    background-color: #0d6efd;
+}
+
+.form_blue button:hover{
+    background-color: #0d6efd;
+}
+
+.image_hover_blue:hover{
+    border: 2px solid black;
+    scale: 1.2;
+}
+
+.arrow_files_blue{
+    border: 1px solid black;
+    box-shadow: 1px 1px 2px rgb(74, 74, 74);
+}
+
+
+
+
