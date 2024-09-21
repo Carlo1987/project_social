@@ -431,16 +431,6 @@ main{
     background-color: rgb(188, 180, 180); 
 }
 
-.card_files:hover .file_index{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(60, 56, 56);
-}
-
-.card_files:hover .file_index img{
-    width: 50%;
-}
 
 .container_avatar{
     display: flex;
@@ -605,6 +595,7 @@ main{
 .file_index{
     width: 100%;
    height: 350px;  
+
 }
 
 .file_index img,
@@ -612,7 +603,20 @@ main{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition:  all 500ms linear; 
  }
+
+ .card_files:hover .file_index{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(60, 56, 56);
+}
+
+.card_files:hover .file_index img{
+    transform: scale(0.95);  
+    object-fit: contain;
+}
 
 
 

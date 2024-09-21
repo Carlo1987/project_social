@@ -22,9 +22,9 @@ window.addEventListener("load", function () {
 
     //////////////       CHAT     /////////////////////////   
    
-    chat();              //   importato a inizio pagina
 
-
+     chat();              //   importato a inizio pagina
+      
 
 
 

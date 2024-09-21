@@ -7,6 +7,7 @@ export default function chat(){
 const url_complete = servers().url_complete; 
 const socket_server = servers().socket;
 
+
 let buttons_chat = document.querySelectorAll('.button_chat');
 let number_messages = document.querySelectorAll('.number_messages span');   
 
@@ -220,10 +221,6 @@ button_chat.onclick = function(){
 
 
 })
-
-
-
-
 
 
 
