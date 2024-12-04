@@ -8,6 +8,12 @@
                 <div class="card-header" style=" background-color: #0d6efd; color:white;">{{ __('Login') }}</div>
 
                 <div class="card-body">
+
+                        <div class="text-center bg-primary text-light rounded p-1  mb-2">
+                           <span class="fs-5 me-2 lang" data-section="register" data-article="fake_users"> Oppure usa un utente fittizzio </span> 
+                            <i class="fa-solid fa-users fa-lg download_fakeUsers" style="cursor: pointer;"> </i>
+                        </div>
+
                     <form method="POST" action="{{ route('login') }}" class="lang_form">
                         @csrf
 

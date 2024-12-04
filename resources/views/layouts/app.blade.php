@@ -11,7 +11,7 @@
     <title>Faceback</title>
 
     <!-- Fonts -->
-    <link rel="icon" type="image/jpeg" href="{{ asset('img/logo_facebook.jpeg') }}">
+    <link rel="icon" type="image/jpg" href="{{ asset('img/logo_faceback.jpg') }}">
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">          <!-- animazioni -->
@@ -35,8 +35,8 @@
     <div id="app">
         <nav class="nav_{{ Themes::show() }} navbar navbar-expand-lg navbar-light shadow-sm fixed-top">
             <div class="container">   
-                <a class="home_{{ Themes::show() }} navbar-brand fw-bold fs-2" style="font-size: 23px; letter-spacing: 1px; font-family: sans-serif; position: relative;" href="{{ route('users.index') }}" id="home" data-theme="{{ Themes::show(Auth::user()->id) }}">
-                    <i class="fa fa-facebook-square" aria-hidden="true"></i> Faceback
+                <a class="navbar-brand fw-bold fs-2" href="{{ route('users.index') }}" id="home" data-theme="{{ Themes::show(Auth::user()->id) }}">
+                    <img src="{{ asset('img/faceback.png') }}" alt="Faceback">
                 </a>
 
                 @else      <!-- se non si è loggati -->
@@ -47,8 +47,8 @@
                         <nav class="navbar fixed-top" style="background-color:white; box-shadow: 1px 2px 8px rgb(160, 153, 153);">
                             <div class="container">
 
-                                <a class="navbar-brand text-primary fw-bold fs-2 " style="font-size: 23px; letter-spacing: 1px; font-family: sans-serif;" href="{{ route('users.index') }}" id="home" data-theme="default">
-                                    <i class="fa fa-facebook-square" aria-hidden="true"></i> Faceback
+                                <a class="navbar-brand text-primary fw-bold fs-2 " href="{{ route('users.index') }}" id="home" data-theme="default">
+                                     <img src="{{ asset('img/faceback.png') }}" alt="Faceback">
                                 </a>
 
 

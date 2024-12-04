@@ -65,9 +65,21 @@ button{
 
 /*       STILE HEADER      */
 
-#home:hover{
-    scale: 1.1;
-    text-shadow: 2px 2px 3px  #92aacd;
+
+.navbar{ min-height: 70px; }
+
+#home{
+    position: relative;
+}
+
+#home img{
+    position: absolute;
+    top: -30px;
+    width: 125px;
+}
+
+#home:hover img{
+   transform: scale(1.05);
 }
 
 
@@ -80,20 +92,18 @@ button{
 
 .starting_menu a{
     color: rgb(63, 60, 60);
-}
-
-.starting_menu:hover{
-    background-color: #0d6efd;
-    box-shadow: 1px 1px 2px  #92aacd;
-    border-radius: 10px;  
     padding-right: 5px; 
     padding-left: 5px; 
-
+    transition: 500ms all ease-in-out;
 }
 
 .starting_menu:hover a{
+    background-color: #0d6efd;
+    box-shadow: 1px 1px 2px  #92aacd;
     color: white;
 }
+
+
 
 .menu_starting_hover{
     display: none; 
@@ -112,8 +122,23 @@ button{
     top: 37px;
 }
 
-.menu_starting_hover .dropdown-menu .dropdown-link:hover{
-    text-decoration: underline;
+.menu_starting_hover .dropdown-menu .dropdown-link{
+    position: relative;
+}
+
+.menu_starting_hover .dropdown-menu .dropdown-link::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 500ms all ease-in-out;
+}
+
+.menu_starting_hover .dropdown-menu .dropdown-link:hover::after{
+    width: 100%;
 }
 
 #chose_language{
@@ -297,6 +322,7 @@ button{
     flex-direction: column;
     justify-content: center;
     gap: 10px;
+    padding-top: 15px; 
 }
 
 .menu_acount_row{
@@ -464,6 +490,7 @@ main{
     align-items: center;
 }
 
+
 .navbarProfile{
     width: 98%;
     background-color: white;
@@ -615,7 +642,7 @@ main{
 
 .card_files:hover .file_index img{
     transform: scale(0.95);  
-    object-fit: contain;
+    object-fit: contain; 
 }
 
 
